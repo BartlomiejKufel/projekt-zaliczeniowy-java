@@ -7,6 +7,12 @@
     <h4>Temat: System quizowy</h4>
 </div>
 
+
+<picture align="center">
+  <source srcset="/assets/crowdle_baner_white.jpg" media="(prefers-color-scheme: dark)">
+  <img src="/assets/crowdle_baner_black.jpg" alt="baner crowdle">
+</picture>
+
 ## 📝 Zarys projektu
     
 Crowdle to gra quizowa, której tematyka nawiązuje do kruków – jednych z najmądrzejszych ptaków na naszej planecie.
