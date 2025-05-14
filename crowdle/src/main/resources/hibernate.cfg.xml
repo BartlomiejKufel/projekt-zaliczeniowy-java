@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Połączenie z bazą -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/crowdle</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">123</property>
+
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <property name="hibernate.hbm2ddl.auto">validate</property>
+
+        <!-- Mapowanie klas -->
+        <mapping class="com.crowdle.model.GameDifficulty"/>
+        <mapping class="com.crowdle.model.GameHistory"/>
+        <mapping class="com.crowdle.model.Notifications"/>
+        <mapping class="com.crowdle.model.PlayerAnswers"/>
+        <mapping class="com.crowdle.model.Questions"/>
+        <mapping class="com.crowdle.model.Ranking"/>
+        <mapping class="com.crowdle.model.Ranks"/>
+        <mapping class="com.crowdle.model.Topics"/>
+        <mapping class="com.crowdle.model.Users"/>
+
+    </session-factory>
+</hibernate-configuration>

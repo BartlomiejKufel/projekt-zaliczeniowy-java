@@ -21,7 +21,6 @@ public class MainApplication extends Application {
 
         Image icon = new Image(new FileInputStream("images/logo_white.png"));
         stage.getIcons().add(icon);
-
         stage.setTitle(title);
 
 

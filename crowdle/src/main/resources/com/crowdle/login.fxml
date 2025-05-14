@@ -3,15 +3,17 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
 <?import javafx.scene.image.ImageView?>
-<GridPane prefHeight="720" prefWidth="1280"
+<?import java.net.URL?>
+
+
+<GridPane prefHeight="720" prefWidth="1280" fx:id="root"
           xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.crowdle.LoginController">
     <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
     <columnConstraints>
-        <ColumnConstraints  maxWidth="320.0" minWidth="10.0" prefWidth="620.0" />
-        <ColumnConstraints  maxWidth="640.0" minWidth="10.0" prefWidth="620.0" />
-        <ColumnConstraints  maxWidth="320.0" minWidth="10.0" prefWidth="620.0" />
+        <ColumnConstraints  maxWidth="320.0" minWidth="10.0" prefWidth="320.0" />
+        <ColumnConstraints  maxWidth="640.0" minWidth="10.0" prefWidth="640.0" />
+        <ColumnConstraints  maxWidth="320.0" minWidth="10.0" prefWidth="320.0" />
     </columnConstraints>
     <rowConstraints>
         <RowConstraints minHeight="10.0" prefHeight="200.0"  />
@@ -23,35 +25,35 @@
     <HBox alignment="center" GridPane.rowIndex="0" GridPane.columnIndex="1">
         <VBox alignment="center">
             <ImageView fx:id="logoImage"
-                       preserveRatio="true"/>
+                       preserveRatio="true" fitWidth="520"/>
         </VBox>
     </HBox>
 
 
     <HBox alignment="center" GridPane.rowIndex="1" GridPane.columnIndex="1"
-          style="-fx-padding: 70 0 0 0;">
-        <VBox spacing="20" >
-                <Label text="Nazwa użytkownika"/>
+          style="-fx-padding: 50 0 0 0;">
+        <VBox spacing="20">
+                <Label text="Nazwa użytkownika" styleClass="fieldLabel"/>
                 <TextField fx:id="usernameField" promptText="Wprowadź nazwę użytkownika"
-                           prefWidth="250" alignment="center"/>
+                           prefWidth="250"/>
 
-                <Label text="Hasło" />
+                <Label text="Hasło" styleClass="fieldLabel"/>
                 <PasswordField fx:id="passwordField" promptText="Wprowadź hasło"
-                               prefWidth="250" alignment="center"/>
+                               prefWidth="250"/>
 
                 <CheckBox fx:id="keepLoggedCheckBox" text="Zapisz dane logowania" />
+
                 <Button onAction="#LoginSubmitButtonClick" text="Zaloguj"/>
-                <Label text="Zarejestruj się" underline="true" />
+                <Label text="Zarejestruj się" styleClass="registerLabel"/>
+
         </VBox>
     </HBox>
 
 
-
-
-
-
-
-
+    <stylesheets>
+        <URL value="@../../styles/light-theme.css"/>
+        <URL value="@../../styles/login.css"/>
+    </stylesheets>
 
 
 </GridPane>

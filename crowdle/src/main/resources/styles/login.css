@@ -1,0 +1,13 @@
+.root{
+    -fx-font-family: sans-serif;
+}
+
+.fieldLabel{
+    -fx-font-size: 14px;
+}
+
+
+
+.registerLabel{
+    -fx-text-fill: blue;
+}
