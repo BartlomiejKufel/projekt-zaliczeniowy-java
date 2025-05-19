@@ -1,10 +1,14 @@
 package com.crowdle.model;
 
 import jakarta.persistence.*;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -41,6 +45,26 @@ public class Users {
 
 
     public Users() {
+    }
+
+
+
+    public static Users getUser(int idToFind){
+        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        Session session = sessionFactory.openSession();
+
+        session.beginTransaction();
+
+        String query = "FROM Users WHERE userId = :id";
+        List<Users> users = session.createQuery(query, Users.class)
+                .setParameter("id", idToFind)
+                .getResultList();
+
+        session.getTransaction().commit();
+        session.close();
+        sessionFactory.close();
+
+        return users.getFirst();
     }
 
     @Override

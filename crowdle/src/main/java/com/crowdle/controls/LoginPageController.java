@@ -1,11 +1,15 @@
-package com.crowdle;
+package com.crowdle.controls;
 
 import com.crowdle.model.Users;
+import com.crowdle.utility.ApplicationInfo;
+import com.crowdle.utility.PageMenager;
 import javafx.fxml.FXML;
+
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
 
@@ -14,17 +18,17 @@ import java.io.FileNotFoundException;
 import java.util.List;
 
 
-public class LoginController {
+public class LoginPageController {
     @FXML
     public PasswordField passwordField;
     public TextField usernameField;
     public ImageView logoImage;
     public CheckBox keepLoggedCheckBox;
     public GridPane root;
+    public Button LoginButton;
 
 
     @FXML
-    //Metoda która uruchamia się odrazu po uruchomieniu
     public void initialize() throws FileNotFoundException {
 
         String theme = "white";
@@ -42,20 +46,31 @@ public class LoginController {
     protected void LoginSubmitButtonClick(){
         String usernameToCheck = usernameField.getText();
         String passwordToCheck = passwordField.getText();
-        boolean keepLogged = keepLoggedCheckBox.isSelected();
-
-        System.out.println(usernameToCheck+";"+passwordToCheck+";"+keepLogged);
 
         SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
         Session session = sessionFactory.openSession();
 
         session.beginTransaction();
 
-        List<Users> users = session.createQuery("FROM Users", Users.class).getResultList();
-        users.forEach(System.out::println);
+        String query = "FROM Users WHERE username = :username AND password = :password";
+        List<Users> users = session.createQuery(query, Users.class)
+                .setParameter("username", usernameToCheck)
+                .setParameter("password", passwordToCheck)
+                .getResultList();
 
         session.getTransaction().commit();
         session.close();
         sessionFactory.close();
+
+        if(!users.isEmpty()) {
+            System.out.println("Zalogowano pomyślnie");
+            ApplicationInfo.LoggedUserId = users.getFirst().getUserId();
+            Stage stage = (Stage) LoginButton.getScene().getWindow();
+            PageMenager.GoToStartPage(stage);
+
+        }else{
+            System.out.println("Błąd logowania");
+        }
+
     }
 }
