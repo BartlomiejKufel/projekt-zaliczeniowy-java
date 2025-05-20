@@ -6,12 +6,52 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.crowdle.controls.StartPageController"
-            prefHeight="720" prefWidth="1280">
+<?import javafx.geometry.Insets?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.crowdle.controller.StartPageController"
+          prefHeight="720" prefWidth="1280">
+<!--    <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>-->
 
-    <Button onAction="#LogoutButtonClick" text="Zaloguj" fx:id="LogoutButton"/>
-    <Label fx:id="testLabel"/>
+    <columnConstraints>
+        <ColumnConstraints percentWidth="35"/>
+        <ColumnConstraints percentWidth="65"/>
+    </columnConstraints>
 
-</AnchorPane>
+    <rowConstraints>
+        <RowConstraints percentHeight="10"/>
+        <RowConstraints percentHeight="80"/>
+        <RowConstraints percentHeight="10"/>
+    </rowConstraints>
+
+    <HBox GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <VBox>
+            <Label fx:id="rankLabel"/>
+            <Label fx:id="rankPointsLabel"/>
+            <Label fx:id="usernameLabel"/>
+        </VBox>
+    </HBox>
+
+
+
+    <HBox GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <VBox spacing="30" >
+            <Button text="Graj" fx:id="gameButton"
+                    prefWidth="1000" prefHeight="100"/>
+            <Button text="Ranking" fx:id="rankingButton"
+                    prefWidth="1000" prefHeight="100"/>
+            <Button text="Ustawienia" fx:id="settingButton"
+                    prefWidth="1000" prefHeight="100"/>
+            <Button onAction="#LogoutButtonClick" text="Wyloguj" fx:id="logoutButton"
+                    prefWidth="1000" prefHeight="100"/>
+        </VBox>
+    </HBox>
+
+
+
+    <StackPane GridPane.columnSpan="2" GridPane.rowIndex="2"
+            style="-fx-background-color: red;">
+    </StackPane>
+
+
+</GridPane>

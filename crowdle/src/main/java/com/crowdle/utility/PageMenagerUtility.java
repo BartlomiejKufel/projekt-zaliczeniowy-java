@@ -6,11 +6,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
-public class PageMenager {
+public class PageMenagerUtility {
 
     public static void GoToStartPage(Stage primaryStage) {
         try {
-            FXMLLoader loader = new FXMLLoader(PageMenager.class.getResource("/com/crowdle/StartPage.fxml"));
+            FXMLLoader loader = new FXMLLoader(PageMenagerUtility.class.getResource("/com/crowdle/StartPage.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
@@ -22,7 +22,7 @@ public class PageMenager {
 
     public static void GoToLoginPage(Stage primaryStage) {
         try {
-            FXMLLoader loader = new FXMLLoader(PageMenager.class.getResource("/com/crowdle/LoginPage.fxml"));
+            FXMLLoader loader = new FXMLLoader(PageMenagerUtility.class.getResource("/com/crowdle/LoginPage.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);

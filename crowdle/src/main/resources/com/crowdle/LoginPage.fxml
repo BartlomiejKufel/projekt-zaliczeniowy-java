@@ -8,7 +8,7 @@
 
 
 <GridPane prefHeight="720" prefWidth="1280" fx:id="root"
-          xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.crowdle.controls.LoginPageController">
+          xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.crowdle.controller.LoginPageController">
     <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
     <columnConstraints>
         <ColumnConstraints  maxWidth="320.0" minWidth="10.0" prefWidth="320.0" />

@@ -12,14 +12,14 @@ public class Ranking {
     private int playerId;
 
     @OneToOne
-    @JoinColumn(name = "playerId", referencedColumnName = "userId", insertable = false, updatable = false)
+    @JoinColumn(name = "\"playerId\"", referencedColumnName = "userId", insertable = false, updatable = false)
     private Users player;
 
     @Column(nullable = false)
     private int points;
 
     @ManyToOne
-    @JoinColumn(name = "rankId")
+    @JoinColumn(name = "\"rankId\"")
     private Ranks rank;
 
 
