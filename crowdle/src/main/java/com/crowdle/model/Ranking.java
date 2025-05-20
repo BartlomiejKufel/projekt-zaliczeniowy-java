@@ -54,5 +54,7 @@ public class Ranking {
     public void setRank(Ranks rank) {
         this.rank = rank;
     }
+
+
 }
 

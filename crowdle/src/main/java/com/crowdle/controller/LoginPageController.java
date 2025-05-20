@@ -58,7 +58,6 @@ public class LoginPageController {
                     .getResultList();
 
             if(!users.isEmpty()) {
-                System.out.println("Zalogowano pomyślnie");
                 ApplicationInfo.LoggedUserId = users.getFirst().getUserId();
                 Stage stage = (Stage) LoginButton.getScene().getWindow();
                 PageMenagerUtility.GoToStartPage(stage);

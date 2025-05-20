@@ -7,11 +7,11 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
 <GridPane xmlns="http://javafx.com/javafx"
           xmlns:fx="http://javafx.com/fxml"
           fx:controller="com.crowdle.controller.StartPageController"
           prefHeight="720" prefWidth="1280">
-<!--    <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>-->
 
     <columnConstraints>
         <ColumnConstraints percentWidth="35"/>
@@ -24,8 +24,19 @@
         <RowConstraints percentHeight="10"/>
     </rowConstraints>
 
+
+    <StackPane GridPane.columnSpan="2" GridPane.rowIndex="0"
+               style="-fx-background-color: red;">
+        <HBox GridPane.columnIndex="1" GridPane.rowIndex="0" alignment="CENTER_RIGHT" spacing="10">
+            <Button text="Admin" fx:id="adminButton"/>
+            <Button text="Powiadomienia" fx:id="notificationButton"/>
+        </HBox>
+    </StackPane>
+
+
     <HBox GridPane.columnIndex="0" GridPane.rowIndex="1">
         <VBox>
+            <ImageView fx:id="rankImage" preserveRatio="true"/>
             <Label fx:id="rankLabel"/>
             <Label fx:id="rankPointsLabel"/>
             <Label fx:id="usernameLabel"/>
@@ -35,7 +46,7 @@
 
 
     <HBox GridPane.columnIndex="1" GridPane.rowIndex="1">
-        <VBox spacing="30" >
+        <VBox spacing="30" alignment="CENTER" >
             <Button text="Graj" fx:id="gameButton"
                     prefWidth="1000" prefHeight="100"/>
             <Button text="Ranking" fx:id="rankingButton"
@@ -51,6 +62,10 @@
 
     <StackPane GridPane.columnSpan="2" GridPane.rowIndex="2"
             style="-fx-background-color: red;">
+        <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
+        <HBox alignment="CENTER_LEFT" >
+            <Label text="HOME"/>
+        </HBox>
     </StackPane>
 
 
