@@ -13,8 +13,8 @@ public class MainApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-//        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("LoginPage.fxml"));
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("StartPage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("LoginPage.fxml"));
+//        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("StartPage.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), ApplicationInfo.WindowWidth, ApplicationInfo.WindowHeight);
 

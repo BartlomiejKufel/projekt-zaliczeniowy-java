@@ -31,7 +31,7 @@
 
 
     <HBox alignment="center" GridPane.rowIndex="1" GridPane.columnIndex="1"
-          style="-fx-padding: 50 0 0 0;">
+          style="-fx-padding: 30 0 0 0;">
         <VBox spacing="20">
                 <Label text="Nazwa użytkownika" styleClass="fieldLabel"/>
                 <TextField fx:id="usernameField" promptText="Wprowadź nazwę użytkownika"
@@ -41,10 +41,10 @@
                 <PasswordField fx:id="passwordField" promptText="Wprowadź hasło"
                                prefWidth="250"/>
 
-                <CheckBox fx:id="keepLoggedCheckBox" text="Zapisz dane logowania" />
 
-                <Button onAction="#LoginSubmitButtonClick" text="Zaloguj" fx:id="LoginButton"/>
-                <Label text="Zarejestruj się" styleClass="registerLabel"/>
+                <Button onAction="#loginSubmitButtonClick" text="Zaloguj" fx:id="LoginButton"/>
+                <Button onAction="#signUpSubmitButtonClick" text="Zarejestruj" fx:id="RegisterButton"/>
+
 
         </VBox>
     </HBox>

@@ -1,10 +1,10 @@
 package com.crowdle.controller;
 
-import com.crowdle.model.Ranking;
 import com.crowdle.model.Users;
 import com.crowdle.ApplicationInfo;
 import com.crowdle.utility.HibernateUtility;
 import com.crowdle.utility.PageMenagerUtility;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 import javafx.scene.control.*;
@@ -13,7 +13,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import org.hibernate.*;
-import org.hibernate.cfg.Configuration;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -28,6 +27,7 @@ public class LoginPageController {
     @FXML public CheckBox keepLoggedCheckBox;
     @FXML public GridPane root;
     @FXML public Button LoginButton;
+    @FXML public Button RegisterButton;
 
 
     @FXML
@@ -45,7 +45,7 @@ public class LoginPageController {
     }
 
     @FXML
-    protected void LoginSubmitButtonClick(){
+    protected void loginSubmitButtonClick(){
         String usernameToCheck = usernameField.getText();
         String passwordToCheck = passwordField.getText();
 
@@ -60,12 +60,19 @@ public class LoginPageController {
             if(!users.isEmpty()) {
                 ApplicationInfo.LoggedUserId = users.getFirst().getUserId();
                 Stage stage = (Stage) LoginButton.getScene().getWindow();
-                PageMenagerUtility.GoToStartPage(stage);
+                PageMenagerUtility.goToStartPage(stage);
             }else{
                 System.out.println("Błąd logowania");
             }
         }
 
+
+    }
+
+    @FXML
+    public void signUpSubmitButtonClick(ActionEvent actionEvent) {
+        Stage stage = (Stage) RegisterButton.getScene().getWindow();
+        PageMenagerUtility.goToSignUpPage(stage);
 
     }
 }

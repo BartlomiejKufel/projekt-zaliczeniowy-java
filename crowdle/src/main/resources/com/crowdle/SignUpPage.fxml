@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.crowdle.controller.SignUpPageController"
+          prefHeight="720" prefWidth="1280">
+
+    <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
+    <columnConstraints>
+        <ColumnConstraints  maxWidth="320.0" minWidth="10.0" prefWidth="320.0" />
+        <ColumnConstraints  maxWidth="640.0" minWidth="10.0" prefWidth="640.0" />
+        <ColumnConstraints  maxWidth="320.0" minWidth="10.0" prefWidth="320.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="200.0"  />
+        <RowConstraints minHeight="10.0" prefHeight="460.0"  />
+        <RowConstraints minHeight="10.0" prefHeight="60.0"  />
+    </rowConstraints>
+
+
+    <HBox alignment="center" GridPane.rowIndex="0" GridPane.columnIndex="1">
+        <VBox alignment="center">
+            <ImageView fx:id="logoImage" preserveRatio="true" fitWidth="520"/>
+        </VBox>
+    </HBox>
+
+    <HBox alignment="center" GridPane.rowIndex="1" GridPane.columnIndex="1"
+          style="-fx-padding: 30 0 0 0;">
+        <VBox spacing="20">
+            <Label text="Nowa nazwa użytkownika" styleClass="fieldLabel"/>
+            <TextField fx:id="usernameField" promptText="Wprowadź nową nazwę użytkownika"
+                       prefWidth="250"/>
+
+            <Label text="Email" styleClass="fieldLabel"/>
+            <TextField fx:id="emailField" promptText="Wprowadź email"
+                       prefWidth="250"/>
+
+            <Label text="Nowe hasło" styleClass="fieldLabel"/>
+            <PasswordField fx:id="passwordField" promptText="Wprowadź nowe hasło"
+                           prefWidth="250"/>
+
+            <Label text="Potwierdź hasło" styleClass="fieldLabel"/>
+            <PasswordField fx:id="passwordConfirmField" promptText="Wprowadź nowe hasło"
+                           prefWidth="250"/>
+
+            <Button onAction="#registerButtonClick" text="Zarejestruj" fx:id="RegisterButton"/>
+            <Button onAction="#goBackButtonClick" text="Powrót" fx:id="GoBackButton"/>
+
+        </VBox>
+    </HBox>
+
+
+    <stylesheets>
+        <URL value="@../../styles/light-theme.css"/>
+        <URL value="@../../styles/login.css"/>
+    </stylesheets>
+
+</GridPane>

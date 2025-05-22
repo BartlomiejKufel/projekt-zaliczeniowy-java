@@ -54,6 +54,6 @@ public class StartPageController {
     @FXML
     public void LogoutButtonClick() {
         Stage stage = (Stage) logoutButton.getScene().getWindow();
-        PageMenagerUtility.GoToLoginPage(stage);
+        PageMenagerUtility.goToLoginPage(stage);
     }
 }
