@@ -18,9 +18,14 @@ public class Ranking {
     @Column(nullable = false)
     private int points;
 
+    @Column(name = "\"rankId\"")
+    private int rankId;
+
     @ManyToOne
-    @JoinColumn(name = "\"rankId\"")
+    @JoinColumn(name = "\"rankId\"", insertable = false, updatable = false)
     private Ranks rank;
+
+
 
 
     public int getPlayerId() {
@@ -53,6 +58,14 @@ public class Ranking {
 
     public void setRank(Ranks rank) {
         this.rank = rank;
+    }
+
+    public int getRankId() {
+        return rankId;
+    }
+
+    public void setRankId(int rankId) {
+        this.rankId = rankId;
     }
 
 

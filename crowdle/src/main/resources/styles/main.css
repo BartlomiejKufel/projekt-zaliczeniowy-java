@@ -1,0 +1,27 @@
+.root{
+    -fx-background-color: #000000;
+    -fx-font-family: "DejaVu Sans Mono";
+    
+}
+
+.versionLabel{
+    -fx-font-size: 20px;
+    -fx-text-fill: #f3f3f3;
+    -fx-font-weight: bold;
+}
+
+.inputField{
+    -fx-background-color:#111111;
+    -fx-text-fill: #f3f3f3;
+    -fx-font-size: 13px;
+}
+
+.inputFieldError{
+    -fx-border-color: #cf2121;
+}
+
+.errorLabel{
+    /* -fx-font-size: 20px; */
+    -fx-text-fill: #cf2121;
+    -fx-font-weight: bold;
+}

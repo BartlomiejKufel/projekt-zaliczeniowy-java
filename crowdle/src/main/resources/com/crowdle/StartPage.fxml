@@ -1,70 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.image.ImageView?>
-<GridPane xmlns="http://javafx.com/javafx"
-          xmlns:fx="http://javafx.com/fxml"
-          fx:controller="com.crowdle.controller.StartPageController"
-          prefHeight="720" prefWidth="1280">
+<GridPane prefHeight="720" prefWidth="1280" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.crowdle.controller.StartPageController">
 
     <columnConstraints>
-        <ColumnConstraints percentWidth="35"/>
-        <ColumnConstraints percentWidth="65"/>
+        <ColumnConstraints percentWidth="35" />
+        <ColumnConstraints percentWidth="65" />
     </columnConstraints>
 
     <rowConstraints>
-        <RowConstraints percentHeight="10"/>
-        <RowConstraints percentHeight="80"/>
-        <RowConstraints percentHeight="10"/>
+        <RowConstraints percentHeight="10" />
+        <RowConstraints percentHeight="80" />
+        <RowConstraints percentHeight="10" />
     </rowConstraints>
 
 
-    <StackPane GridPane.columnSpan="2" GridPane.rowIndex="0"
-               style="-fx-background-color: red;">
-        <HBox GridPane.columnIndex="1" GridPane.rowIndex="0" alignment="CENTER_RIGHT" spacing="10">
-            <Button text="Admin" fx:id="adminButton"/>
-            <Button text="Powiadomienia" fx:id="notificationButton"/>
+    <StackPane style="-fx-background-color: red;" GridPane.columnSpan="2" GridPane.rowIndex="0">
+        <HBox alignment="CENTER_RIGHT" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <Button fx:id="adminButton" text="Admin" />
+            <Button fx:id="notificationButton" text="Powiadomienia" />
         </HBox>
     </StackPane>
 
 
-    <HBox GridPane.columnIndex="0" GridPane.rowIndex="1">
+    <HBox alignment="TOP_CENTER" GridPane.columnIndex="0" GridPane.rowIndex="1">
         <VBox>
-            <ImageView fx:id="rankImage" preserveRatio="true"/>
+            <ImageView fx:id="rankImage" preserveRatio="true" />
             <Label fx:id="rankLabel"/>
-            <Label fx:id="rankPointsLabel"/>
-            <Label fx:id="usernameLabel"/>
+            <Label fx:id="rankPointsLabel" />
+            <Label fx:id="usernameLabel" />
         </VBox>
     </HBox>
 
 
 
     <HBox GridPane.columnIndex="1" GridPane.rowIndex="1">
-        <VBox spacing="30" alignment="CENTER" >
-            <Button text="Graj" fx:id="gameButton"
-                    prefWidth="1000" prefHeight="100"/>
-            <Button text="Ranking" fx:id="rankingButton"
-                    prefWidth="1000" prefHeight="100"/>
-            <Button text="Ustawienia" fx:id="settingButton"
-                    prefWidth="1000" prefHeight="100"/>
-            <Button onAction="#LogoutButtonClick" text="Wyloguj" fx:id="logoutButton"
-                    prefWidth="1000" prefHeight="100"/>
+        <VBox alignment="CENTER" spacing="30">
+            <Button fx:id="gameButton" prefHeight="100" prefWidth="1000" text="Graj" />
+            <Button fx:id="rankingButton" prefHeight="100" prefWidth="1000" text="Ranking" />
+            <Button fx:id="settingButton" prefHeight="100" prefWidth="1000" text="Ustawienia" />
+            <Button fx:id="logoutButton" onAction="#LogoutButtonClick" prefHeight="100" prefWidth="1000" text="Wyloguj" />
         </VBox>
     </HBox>
 
 
 
-    <StackPane GridPane.columnSpan="2" GridPane.rowIndex="2"
-            style="-fx-background-color: red;">
-        <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
-        <HBox alignment="CENTER_LEFT" >
-            <Label text="HOME"/>
+    <StackPane style="-fx-background-color: red;" GridPane.columnSpan="2" GridPane.rowIndex="2">
+        <padding><Insets bottom="25" left="25" right="25" top="25" /></padding>
+        <HBox alignment="CENTER_LEFT">
+            <Label text="HOME" />
         </HBox>
     </StackPane>
 

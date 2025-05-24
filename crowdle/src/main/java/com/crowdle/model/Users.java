@@ -35,37 +35,11 @@ public class Users {
     @Column(nullable = false, name = "\"isAdmin\"")
     private boolean isAdmin;
 
-    @Column(name = "\"selectedTheme\"")
-    @Enumerated(EnumType.STRING)
-    private Theme selectedTheme;
-
-    public enum Theme {
-        light, dark
-    }
 
 
     public Users() {
     }
 
-
-
-    public static Users getUser(int idToFind){
-        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
-        Session session = sessionFactory.openSession();
-
-        session.beginTransaction();
-
-        String query = "FROM Users WHERE userId = :id";
-        List<Users> users = session.createQuery(query, Users.class)
-                .setParameter("id", idToFind)
-                .getResultList();
-
-        session.getTransaction().commit();
-        session.close();
-        sessionFactory.close();
-
-        return users.getFirst();
-    }
 
     @Override
     public String toString() {
@@ -76,7 +50,6 @@ public class Users {
                 ", password='" + password + '\'' +
                 ", createdAt=" + createdAt +
                 ", isAdmin=" + isAdmin +
-                ", selectedTheme=" + selectedTheme +
                 '}';
     }
 
@@ -128,11 +101,4 @@ public class Users {
         isAdmin = admin;
     }
 
-    public Theme getSelectedTheme() {
-        return selectedTheme;
-    }
-
-    public void setSelectedTheme(Theme selectedTheme) {
-        this.selectedTheme = selectedTheme;
-    }
 }

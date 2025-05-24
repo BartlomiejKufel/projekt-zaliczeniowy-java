@@ -1,5 +1,6 @@
 package com.crowdle.controller;
 
+import com.crowdle.dao.UsersDAO;
 import com.crowdle.model.Users;
 import com.crowdle.ApplicationInfo;
 import com.crowdle.utility.HibernateUtility;
@@ -24,49 +25,44 @@ public class LoginPageController {
     @FXML public PasswordField passwordField;
     @FXML public TextField usernameField;
     @FXML public ImageView logoImage;
-    @FXML public CheckBox keepLoggedCheckBox;
     @FXML public GridPane root;
     @FXML public Button LoginButton;
     @FXML public Button RegisterButton;
+    @FXML public Label errorLabel;
+    @FXML public Label usernameErrorLabel;
+    @FXML public Label passwordErrorLabel;
 
 
     @FXML
     public void initialize() throws FileNotFoundException {
+        Image baner = new Image(new FileInputStream("images/baner_black.png"));
+        logoImage.setImage(baner);
 
-        String theme = "white";
-        if(theme.equals("white")){
-            Image baner = new Image(new FileInputStream("images/baner_white.png"));
-            logoImage.setImage(baner);
-        }else{
-            Image baner = new Image(new FileInputStream("images/baner_black.png"));
-            logoImage.setImage(baner);
-        }
-
+        errorLabel.setVisible(false);
     }
 
     @FXML
     protected void loginSubmitButtonClick(){
+        errorLabel.setVisible(false);
+        usernameErrorLabel.setVisible(false);
+        passwordErrorLabel.setVisible(false);
         String usernameToCheck = usernameField.getText();
         String passwordToCheck = passwordField.getText();
+        boolean error = false;
+
+        if(usernameToCheck.isEmpty()){usernameErrorLabel.setText("Puste pole!");usernameErrorLabel.setVisible(true);error=true;}
+        if(passwordToCheck.isEmpty()){passwordErrorLabel.setText("Puste pole!");passwordErrorLabel.setVisible(true);error=true;}
+        if(error){return;}
 
 
-        try(Session session = HibernateUtility.getSessionFactory().openSession()){
-            String query = "FROM Users WHERE username = :username AND password = :password";
-            List<Users> users = session.createQuery(query, Users.class)
-                    .setParameter("username", usernameToCheck)
-                    .setParameter("password", passwordToCheck)
-                    .getResultList();
 
-            if(!users.isEmpty()) {
-                ApplicationInfo.LoggedUserId = users.getFirst().getUserId();
-                Stage stage = (Stage) LoginButton.getScene().getWindow();
-                PageMenagerUtility.goToStartPage(stage);
-            }else{
-                System.out.println("Błąd logowania");
-            }
-        }
+        Users user = UsersDAO.getUser(usernameToCheck,passwordToCheck);
+        if(user!=null) {
+            ApplicationInfo.LoggedUserId = user.getUserId();
+            Stage stage = (Stage) LoginButton.getScene().getWindow();
+            PageMenagerUtility.goToStartPage(stage);
 
-
+        }else{errorLabel.setText("Złe dane logowania!");errorLabel.setVisible(true);}
     }
 
     @FXML
