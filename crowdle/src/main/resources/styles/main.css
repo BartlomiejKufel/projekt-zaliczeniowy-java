@@ -1,7 +1,7 @@
 .root{
     -fx-background-color: #000000;
     -fx-font-family: "DejaVu Sans Mono";
-    
+
 }
 
 .versionLabel{
@@ -21,7 +21,14 @@
 }
 
 .errorLabel{
-    /* -fx-font-size: 20px; */
     -fx-text-fill: #cf2121;
     -fx-font-weight: bold;
+}
+
+.banerPane{
+    -fx-background-color:#111111;
+}
+
+.textColor{
+    -fx-text-fill: #f3f3f3;
 }

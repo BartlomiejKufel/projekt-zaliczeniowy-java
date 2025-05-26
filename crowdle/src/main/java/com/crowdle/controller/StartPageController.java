@@ -1,19 +1,26 @@
 package com.crowdle.controller;
 
+import com.crowdle.dao.RankingDTO;
 import com.crowdle.model.Ranking;
 import com.crowdle.ApplicationInfo;
 import com.crowdle.utility.HibernateUtility;
 import com.crowdle.utility.PageMenagerUtility;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import org.hibernate.Session;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.List;
 
 public class StartPageController {
 
@@ -27,9 +34,15 @@ public class StartPageController {
     @FXML public ImageView rankImage;
     @FXML public Button adminButton;
     @FXML public Button notificationButton;
+    @FXML public GridPane root;
+    @FXML public ImageView iconImageView;
 
     @FXML
-    public void initialize() {
+    public void initialize() throws FileNotFoundException {
+
+        Image iconImg = new Image(new FileInputStream("images/icon_crowdle.png"));
+        iconImageView.setImage(iconImg);
+
 
         try(Session session = HibernateUtility.getSessionFactory().openSession()){
             Ranking userInformation = session.find(Ranking.class, ApplicationInfo.LoggedUserId);
@@ -56,4 +69,20 @@ public class StartPageController {
         Stage stage = (Stage) logoutButton.getScene().getWindow();
         PageMenagerUtility.goToLoginPage(stage);
     }
+
+    @FXML
+    public void SettingButtonClick(ActionEvent actionEvent) {
+        Stage stage = (Stage) settingButton.getScene().getWindow();
+        PageMenagerUtility.goToSettingsPage(stage);
+    }
+
+    @FXML
+    public void RankingButtonClick(ActionEvent actionEvent) {
+        Stage stage = (Stage) rankingButton.getScene().getWindow();
+        PageMenagerUtility.goToRankingPage(stage);
+
+    }
+
+
+
 }

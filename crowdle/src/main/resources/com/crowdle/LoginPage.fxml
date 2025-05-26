@@ -60,7 +60,7 @@
         <Button fx:id="RegisterButton" layoutX="245.0" layoutY="344.0" onAction="#signUpSubmitButtonClick" prefHeight="30.0" prefWidth="150.0" styleClass="loginButton" text="Zarejestruj" />
     </Pane>
     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="banerPane" GridPane.columnSpan="3" GridPane.rowIndex="2">
-        <Label layoutX="1181.0" layoutY="36.0" styleClass="versionLabel" text="v 1.0.1" />
+        <Label layoutX="1180.0" layoutY="36.0" styleClass="versionLabel" text="v 1.0.1" />
     </Pane>
 
 

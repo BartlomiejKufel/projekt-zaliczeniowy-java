@@ -43,4 +43,28 @@ public class PageMenagerUtility {
             System.out.println(e.getMessage());
         }
     }
+
+    public static void goToSettingsPage(Stage primaryStage) {
+        try {
+            FXMLLoader loader = new FXMLLoader(PageMenagerUtility.class.getResource("/com/crowdle/SettingsPage.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static void goToRankingPage(Stage primaryStage) {
+        try {
+            FXMLLoader loader = new FXMLLoader(PageMenagerUtility.class.getResource("/com/crowdle/RankingPage.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }

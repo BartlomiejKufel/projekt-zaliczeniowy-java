@@ -18,6 +18,8 @@ module com.crowdle {
     opens com.crowdle.model to org.hibernate.orm.core;
     exports com.crowdle.controller;
     opens com.crowdle.controller to javafx.fxml;
+    exports com.crowdle.dao;
+    opens com.crowdle.dao;
 
     uses org.hibernate.Session;
 }

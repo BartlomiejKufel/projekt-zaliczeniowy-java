@@ -1,0 +1,85 @@
+
+.usernameLabel{
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+.rankLabel{
+    -fx-font-size: 18px;
+}
+
+.pointsLabel{
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.userPane{
+    -fx-border-color: #f3f3f3;
+    -fx-border-width: 3px 3px 3px 0px;
+    -fx-border-style: solid;
+}
+
+.logoutButton{
+    -fx-background-color: #3e2936;
+    -fx-text-fill: #f3f3f3;
+    -fx-font-size: 35px;
+    -fx-font-weight: bold;
+
+    -fx-border-color: #f3f3f3;
+    -fx-border-width: 3px 0px 3px 3px;
+    -fx-border-style: solid;
+}
+
+.logoutButton:hover{
+    -fx-text-fill: #efb6d8;         
+    -fx-border-color: #efb6d8;   
+}
+
+.settingButton{
+    -fx-background-color: #222e4a;
+    -fx-text-fill: #f3f3f3;
+    -fx-font-size: 35px;
+    -fx-font-weight: bold;
+
+    -fx-border-color: #f3f3f3;
+    -fx-border-width: 3px 0px 3px 3px;
+    -fx-border-style: solid;
+}
+
+.settingButton:hover{
+    -fx-text-fill: #a3d2ff;         
+    -fx-border-color: #a3d2ff;   
+}
+
+.rankingButton{
+    -fx-background-color: #242336;
+    -fx-text-fill: #f3f3f3;
+    -fx-font-size: 35px;
+    -fx-font-weight: bold;
+
+    -fx-border-color: #f3f3f3;
+    -fx-border-width: 3px 0px 3px 3px;
+    -fx-border-style: solid;
+}
+
+.rankingButton:hover{
+    -fx-text-fill: #a8a3e6;         
+    -fx-border-color: #a8a3e6;   
+}
+
+
+.playButton{
+    -fx-background-color: #224a32;
+    -fx-text-fill: #f3f3f3;
+    -fx-font-size: 35px;
+    -fx-font-weight: bold;
+
+    -fx-border-color: #f3f3f3;
+    -fx-border-width: 3px 0px 3px 3px;
+    -fx-border-style: solid;
+}
+
+.playButton:hover {
+    -fx-text-fill: #a3ffb8;         
+    -fx-border-color: #a3ffb8;      
+}

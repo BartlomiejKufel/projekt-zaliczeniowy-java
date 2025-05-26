@@ -33,7 +33,7 @@
 
 
     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="banerPane" GridPane.columnSpan="3" GridPane.rowIndex="2">
-        <Label layoutX="1181.0" layoutY="36.0" styleClass="versionLabel" text="v 1.0.1" />
+        <Label layoutX="1180.0" layoutY="36.0" styleClass="versionLabel" text="v 1.0.1" />
     </Pane>
     <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
         <Label layoutX="180.0" layoutY="35.0" styleClass="fieldLabel" text="Nazwa użytkownika">

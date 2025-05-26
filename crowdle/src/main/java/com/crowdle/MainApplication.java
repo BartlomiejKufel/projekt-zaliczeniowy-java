@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import org.hibernate.Session;
 
 import java.io.IOException;
 import java.io.FileInputStream;
@@ -13,8 +14,13 @@ public class MainApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("LoginPage.fxml"));
-//        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("StartPage.fxml"));
+        try(Session session = HibernateUtility.getSessionFactory().openSession()){
+            System.out.println("Połączenie z bazą danych");
+        }
+
+
+//        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("LoginPage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("StartPage.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), ApplicationInfo.WindowWidth, ApplicationInfo.WindowHeight);
 

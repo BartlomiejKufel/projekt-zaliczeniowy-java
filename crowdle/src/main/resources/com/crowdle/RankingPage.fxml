@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane fx:id="root" prefHeight="720" prefWidth="1280" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.crowdle.controller.RankingPageController">
+
+    <columnConstraints>
+        <ColumnConstraints percentWidth="80" />
+        <ColumnConstraints percentWidth="20" />
+    </columnConstraints>
+
+    <rowConstraints>
+        <RowConstraints percentHeight="10" />
+        <RowConstraints percentHeight="80" />
+        <RowConstraints percentHeight="10" />
+    </rowConstraints>
+   <Pane prefHeight="200.0" prefWidth="200.0" styleClass="banerPane" GridPane.columnSpan="2" GridPane.rowIndex="2">
+      <children>
+            <Label layoutY="36.0" styleClass="versionLabel" text="HOME &gt; RANKING">
+            <padding>
+               <Insets left="10.0" />
+            </padding></Label>
+         <Label layoutX="1180.0" layoutY="36.0" styleClass="versionLabel" text="v 1.0.1" />
+      </children>
+   </Pane>
+   <Pane prefHeight="200.0" prefWidth="200.0" styleClass="banerPane" GridPane.columnSpan="2">
+      <children>
+         <ImageView fx:id="iconImageView" fitHeight="72.0" fitWidth="91.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../../../../../images/icon_crowdle.png" />
+            </image>
+         </ImageView>
+      </children></Pane>
+     <HBox alignment="CENTER_RIGHT" spacing="10" GridPane.columnIndex="1">
+      <children>
+            <Button fx:id="adminButton" text="Admin" />
+            <Button fx:id="notificationButton" text="Powiadomienia">
+            <HBox.margin>
+               <Insets right="10.0" />
+            </HBox.margin>
+         </Button>
+      </children>
+     </HBox>
+   <Pane prefHeight="200.0" prefWidth="200.0" styleClass="banerPane" GridPane.rowIndex="1">
+      <opaqueInsets>
+         <Insets />
+      </opaqueInsets>
+      <GridPane.margin>
+         <Insets bottom="20.0" right="40.0" top="20.0" />
+      </GridPane.margin>
+      <children>
+         <TableView fx:id="rankingTableView" layoutX="62.0" layoutY="57.0" prefHeight="450.0" prefWidth="600.0">
+           <columns>
+             <TableColumn prefWidth="205.0" text="Nick" />
+             <TableColumn prefWidth="109.0" text="Punkty" />
+               <TableColumn prefWidth="285.0" text="Nazwa" />
+           </columns>
+         </TableView>
+      </children>
+   </Pane>
+
+
+    <stylesheets>
+        <URL value="@../../styles/main.css" />
+        <URL value="@../../styles/ranking.css" />
+    </stylesheets>
+
+
+</GridPane>
