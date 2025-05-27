@@ -43,8 +43,7 @@ W grze dostępna będzie tabela rankingowa, która pozwoli graczom poczuć nutę
 
 ### 🎧 dodatkowo gracz będzie mógł:
 <ul>
-    <li>przeglądać historię swoich gier,</li>
-    <li>wybierać szatę graficzną programu (jasna / ciemna),</li>
+    <li>przeglądać swoje statystyki,</li>
     <li>odczytywać powiadomienia,</li>
     <li>uruchamiać gry treningowe z różnym poziomem trudności pytań,</li>
     <li>a także zmieniać nazwę użytkownika i hasło</li>
