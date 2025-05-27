@@ -61,13 +61,19 @@
          <Insets bottom="20.0" right="40.0" top="20.0" />
       </GridPane.margin>
       <children>
-         <TableView fx:id="rankingTableView" layoutX="62.0" layoutY="57.0" prefHeight="450.0" prefWidth="600.0">
+         <TableView fx:id="rankingTableView" layoutX="85.0" layoutY="60.0" prefHeight="450.0" prefWidth="766.0">
            <columns>
-             <TableColumn prefWidth="205.0" text="Nick" />
-             <TableColumn prefWidth="109.0" text="Punkty" />
-               <TableColumn prefWidth="285.0" text="Nazwa" />
+             <TableColumn prefWidth="253.59996795654297" text="Username" fx:id="usernameTableColumn"/>
+             <TableColumn prefWidth="134.93341064453125" text="Punkty" fx:id="pointsTableColumn"/>
+               <TableColumn prefWidth="376.3999938964844" text="Nazwa" fx:id="nameTableColumn"/>
            </columns>
          </TableView>
+         <Label layoutX="431.0" layoutY="25.0" text="SALA CHWAŁY" />
+      </children>
+   </Pane>
+   <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <children>
+         <Button alignment="BASELINE_LEFT" fx:id="backButton" onAction="#backButtonClick" layoutX="56.0" layoutY="455.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" text="POWRÓT" />
       </children>
    </Pane>
 

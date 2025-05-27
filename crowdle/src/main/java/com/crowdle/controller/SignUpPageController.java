@@ -1,6 +1,7 @@
 package com.crowdle.controller;
 
 import com.crowdle.ApplicationInfo;
+import com.crowdle.dao.UsersDAO;
 import com.crowdle.model.Ranking;
 import com.crowdle.model.Ranks;
 import com.crowdle.model.Users;
@@ -61,8 +62,6 @@ public class SignUpPageController {
         String newEmail = emailField.getText();
         boolean error=false;
 
-
-
         if(newUsername.isEmpty()){errorUserLabel.setText("Puste pole!"); errorUserLabel.setVisible(true);error=true;}
         if(newEmail.isEmpty()){errorMailLabel.setText("Puste pole!");errorMailLabel.setVisible(true);error=true;}
         else if (!ValidationUtility.isValidEmail(newEmail)) {errorMailLabel.setText("Niepoprawny adres e-mail! Upewnij się, że zawiera znak '@' oraz poprawną nazwę domeny (np. example.com)"); errorMailLabel.setVisible(true); error=true;}
@@ -72,31 +71,11 @@ public class SignUpPageController {
         else if(!newPassword.equals(confirmPassword)){errorConfirmLabel.setText("Błędne hasło!"); errorConfirmLabel.setVisible(true); error=true;}
         if(error) return;
 
+        UsersDAO.addUser(newUsername, newEmail,newPassword);
 
-        try(Session session = HibernateUtility.getSessionFactory().openSession()){
-            Users user = new Users();
-            user.setUsername(newUsername);
-            user.setEmail(newEmail);
-            user.setPassword(newPassword);
-            user.setAdmin(false);
-            user.setCreatedAt(new Timestamp(System.currentTimeMillis()));
-            session.beginTransaction();
-            session.persist(user);
-            session.getTransaction().commit();
+        Stage stage = (Stage) RegisterButton.getScene().getWindow();
+        PageMenagerUtility.goToLoginPage(stage);
 
-            session.beginTransaction();
-            System.out.println("Dodanie User id: " +user.getUserId());
-
-            Ranking userRanking = new Ranking();
-            userRanking.setPlayerId(user.getUserId());
-            userRanking.setPoints(0);
-            userRanking.setRankId(1);
-            session.persist(userRanking);
-            session.getTransaction().commit();
-
-            System.out.println("Dodanie ranking");
-
-        }
     }
 
     @FXML
