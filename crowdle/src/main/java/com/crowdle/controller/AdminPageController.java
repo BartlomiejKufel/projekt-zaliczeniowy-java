@@ -1,24 +1,26 @@
 package com.crowdle.controller;
 
+import com.crowdle.dao.RankingDAO;
 import com.crowdle.dao.UsersDAO;
+import com.crowdle.model.Ranking;
 import com.crowdle.model.Users;
+import com.crowdle.utility.HibernateUtility;
 import com.crowdle.utility.PageMenagerUtility;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import org.hibernate.Session;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.Optional;
 
 public class AdminPageController {
     @FXML public GridPane root;
@@ -49,15 +51,14 @@ public class AdminPageController {
         createdAtTableColumn.setCellValueFactory(new PropertyValueFactory<>("createdAt"));
         adminTableColumn.setCellValueFactory(new PropertyValueFactory<>("isAdmin"));
 
-
-        ObservableList<Users> rankingObservableList = FXCollections.observableArrayList(UsersDAO.getUsers());
-        usersTableView.setItems(rankingObservableList);
+        refresh();
 
         selectedLabel.setVisible(false);
         deleteButton.setVisible(false);
         editButton.setVisible(false);
 
         usersTableView.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            deleteButton.setVisible(false);
             if (newSelection != null) {
                 informationLabel.setText("Wybrałeś użytkownika");
                 selectedLabel.setText("id: " + newSelection.getUserId());
@@ -80,5 +81,35 @@ public class AdminPageController {
     public void backButtonClick(ActionEvent actionEvent) {
         Stage stage = (Stage) backButton.getScene().getWindow();
         PageMenagerUtility.goToStartPage(stage);
+    }
+
+    public void deleteButtonClick(ActionEvent actionEvent) {
+        Users selectedUser = usersTableView.getSelectionModel().getSelectedItem();
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Potwierdzenie");
+        alert.setHeaderText(null);
+        alert.setContentText("Czy na pewno chcesz usunąć użytkownika?");
+
+        ButtonType tak = new ButtonType("TAK");
+        ButtonType nie = new ButtonType("NIE");
+
+        alert.getButtonTypes().setAll(tak, nie);
+
+        Optional<ButtonType> result = alert.showAndWait();
+
+        if (result.isPresent() && result.get() == tak) {
+            UsersDAO.deleteUser(selectedUser.getUserId());
+            refresh();
+        }
+    }
+
+    public void editButtonClick(ActionEvent actionEvent) {
+
+    }
+
+    private void refresh(){
+        ObservableList<Users> rankingObservableList = FXCollections.observableArrayList(UsersDAO.getUsers());
+        usersTableView.setItems(rankingObservableList);
     }
 }

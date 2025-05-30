@@ -84,4 +84,23 @@ public class UsersDAO {
             session.getTransaction().commit();
         }
     }
+
+
+    public static void deleteUser(int id){
+        try(Session session = HibernateUtility.getSessionFactory().openSession()){
+            session.beginTransaction();
+            Users user = session.find(Users.class, id);
+            Ranking player = RankingDAO.getPlayer(id);
+            if (player != null) {
+                session.remove(player);
+                if (user != null) {
+                    session.getTransaction().commit();
+                    session.beginTransaction();
+                    session.remove(user);
+                }
+            }
+
+            session.getTransaction().commit();
+        }
+    }
 }
