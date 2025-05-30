@@ -15,8 +15,8 @@
 <GridPane fx:id="root" prefHeight="720" prefWidth="1280" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.crowdle.controller.SettingsPageController">
 
     <columnConstraints>
-        <ColumnConstraints percentWidth="35" />
-        <ColumnConstraints percentWidth="65" />
+        <ColumnConstraints percentWidth="80" />
+        <ColumnConstraints percentWidth="20" />
     </columnConstraints>
 
     <rowConstraints>
@@ -51,6 +51,19 @@
          </Button>
       </children>
      </HBox>
+    <Pane prefHeight="200.0" prefWidth="200.0" styleClass="banerPane" GridPane.rowIndex="1">
+        <opaqueInsets>
+            <Insets />
+        </opaqueInsets>
+        <GridPane.margin>
+            <Insets bottom="20.0" right="40.0" top="20.0" />
+        </GridPane.margin>
+    </Pane>
+    <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <children>
+            <Button alignment="BASELINE_LEFT" fx:id="backButton" onAction="#backButtonClick" layoutX="56.0" layoutY="455.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" text="POWRÓT" />
+        </children>
+    </Pane>
 
 
     <stylesheets>
