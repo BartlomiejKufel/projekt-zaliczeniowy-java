@@ -1,8 +1,10 @@
 package com.crowdle.controller;
 
+import com.crowdle.ApplicationInfo;
 import com.crowdle.dao.RankingDAO;
 import com.crowdle.dao.RankingDTO;
-import com.crowdle.utility.HibernateUtility;
+import com.crowdle.dao.UsersDAO;
+import com.crowdle.utility.CsvUtility;
 import com.crowdle.utility.PageMenagerUtility;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,11 +18,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import org.hibernate.Session;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.List;
 
 public class RankingPageController {
 
@@ -32,6 +32,7 @@ public class RankingPageController {
     @FXML public TableColumn<RankingDTO,String> usernameTableColumn;
     @FXML public TableColumn<RankingDTO,Integer> pointsTableColumn;
     @FXML public TableColumn<RankingDTO,String> nameTableColumn;
+    @FXML public Button saveButton;
 
     @FXML
     public void initialize() throws FileNotFoundException {
@@ -45,11 +46,17 @@ public class RankingPageController {
         ObservableList<RankingDTO> rankingObservableList = FXCollections.observableArrayList(RankingDAO.getRanking());
         rankingTableView.setItems(rankingObservableList);
 
+        saveButton.setVisible(UsersDAO.getUser(ApplicationInfo.LoggedUserId).isAdmin());
     }
 
     public void backButtonClick(ActionEvent actionEvent) {
         Stage stage = (Stage) backButton.getScene().getWindow();
         PageMenagerUtility.goToStartPage(stage);
 
+    }
+
+    public void saveButtonClick(ActionEvent actionEvent) {
+        Stage stage = (Stage) saveButton.getScene().getWindow();
+        CsvUtility.exportRanking(RankingDAO.getRanking(), stage);
     }
 }

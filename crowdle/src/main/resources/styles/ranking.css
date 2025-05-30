@@ -45,6 +45,22 @@
     -fx-background-color: #111111;
 }
 
+.saveButton{
+    -fx-background-color: #224a32;
+    -fx-text-fill: #f3f3f3;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+
+    -fx-border-color: #f3f3f3;
+    -fx-border-width: 2px 0px 2px 2px;
+    -fx-border-style: solid;
+}
+
+.saveButton:hover {
+    -fx-text-fill: #a3ffb8;         
+    -fx-border-color: #a3ffb8;      
+}
+
 
 
 .backButton{

@@ -76,6 +76,7 @@
    <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
       <children>
          <Button fx:id="backButton" alignment="BASELINE_LEFT" layoutX="56.0" layoutY="455.0" mnemonicParsing="false" onAction="#backButtonClick" prefHeight="100.0" prefWidth="200.0" styleClass="backButton" text="POWRÓT" />
+         <Button fx:id="saveButton" alignment="BASELINE_LEFT" layoutX="86.0" layoutY="391.0" mnemonicParsing="false" onAction="#saveButtonClick" prefHeight="38.0" prefWidth="170.0" styleClass="saveButton" text="POBIERZ RANKING" />
       </children>
    </Pane>
 
