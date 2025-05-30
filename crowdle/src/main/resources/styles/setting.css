@@ -1,0 +1,55 @@
+.fieldLabel{
+    -fx-font-size: 16px;
+    -fx-text-fill: #f3f3f3;
+    -fx-font-weight: bold;
+}
+
+.saveLabel{
+    -fx-font-size: 20px;
+    -fx-text-fill: #29ce6b;
+    -fx-font-weight: bold;
+}
+
+.headerLabel{
+    -fx-font-size: 24px;
+    -fx-text-fill: #f3f3f3;
+    -fx-font-weight: bold;
+}
+
+
+
+.saveButton{
+    -fx-background-color: #224a32;
+    -fx-text-fill: #f3f3f3;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+
+    -fx-border-color: #f3f3f3;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-style: solid;
+}
+
+.saveButton:hover {
+    -fx-text-fill: #a3ffb8;         
+    -fx-border-color: #a3ffb8;      
+}
+
+.backButton{
+    -fx-background-color: #3e2936;
+    -fx-text-fill: #f3f3f3;
+    -fx-font-size: 35px;
+    -fx-font-weight: bold;
+
+    -fx-border-color: #f3f3f3;
+    -fx-border-width: 3px 0px 3px 3px;
+    -fx-border-style: solid;
+}
+
+.backButton:hover{
+    -fx-text-fill: #efb6d8;         
+    -fx-border-color: #efb6d8;   
+}
+
+.inputField{
+    -fx-background-color:#000000;
+}

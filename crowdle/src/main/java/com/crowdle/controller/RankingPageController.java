@@ -26,7 +26,6 @@ public class RankingPageController {
 
     @FXML public GridPane root;
     @FXML public ImageView iconImageView;
-    @FXML public Button adminButton;
     @FXML public Button notificationButton;
     @FXML public TableView<RankingDTO> rankingTableView;
     @FXML public Button backButton;

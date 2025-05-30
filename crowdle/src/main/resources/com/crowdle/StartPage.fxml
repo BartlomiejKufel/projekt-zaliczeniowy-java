@@ -85,7 +85,7 @@
       </children></Pane>
      <HBox alignment="CENTER_RIGHT" spacing="10" GridPane.columnIndex="1">
       <children>
-            <Button fx:id="adminButton" text="Admin" />
+            <Button fx:id="adminButton" text="Admin" onAction="#adminButtonClick"/>
             <Button fx:id="notificationButton" text="Powiadomienia">
             <HBox.margin>
                <Insets right="10.0" />

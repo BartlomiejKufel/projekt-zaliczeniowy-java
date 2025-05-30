@@ -67,4 +67,16 @@ public class PageMenagerUtility {
             System.out.println(e.getMessage());
         }
     }
+
+    public static void goToAdminPage(Stage primaryStage) {
+        try {
+            FXMLLoader loader = new FXMLLoader(PageMenagerUtility.class.getResource("/com/crowdle/AdminPage.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }

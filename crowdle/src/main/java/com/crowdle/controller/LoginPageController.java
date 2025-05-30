@@ -3,7 +3,6 @@ package com.crowdle.controller;
 import com.crowdle.dao.UsersDAO;
 import com.crowdle.model.Users;
 import com.crowdle.ApplicationInfo;
-import com.crowdle.utility.HibernateUtility;
 import com.crowdle.utility.PageMenagerUtility;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,11 +12,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import org.hibernate.*;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.List;
 
 
 public class LoginPageController {

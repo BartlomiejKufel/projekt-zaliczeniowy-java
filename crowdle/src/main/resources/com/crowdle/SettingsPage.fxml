@@ -4,6 +4,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -43,7 +45,6 @@
       </children></Pane>
      <HBox alignment="CENTER_RIGHT" spacing="10" GridPane.columnIndex="1">
       <children>
-            <Button fx:id="adminButton" text="Admin" />
             <Button fx:id="notificationButton" text="Powiadomienia">
             <HBox.margin>
                <Insets right="10.0" />
@@ -61,14 +62,49 @@
     </Pane>
     <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
         <children>
-            <Button alignment="BASELINE_LEFT" fx:id="backButton" onAction="#backButtonClick" layoutX="56.0" layoutY="455.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" text="POWRÓT" />
+            <Button fx:id="backButton" alignment="BASELINE_LEFT" layoutX="56.0" layoutY="455.0" mnemonicParsing="false" onAction="#backButtonClick" prefHeight="100.0" prefWidth="200.0" styleClass="backButton" text="POWRÓT" />
         </children>
     </Pane>
+   <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+      <children>
+         <Label layoutX="327.0" layoutY="169.0" styleClass="fieldLabel" text="Nazwa użytkownika">
+            <padding>
+               <Insets bottom="8.0" />
+            </padding>
+         </Label>
+         <TextField fx:id="usernameField" focusTraversable="false" layoutX="327.0" layoutY="197.0" prefWidth="280.0" promptText="Wprowadź nazwę użytkownika" styleClass="inputField" />
+         <Label fx:id="errorUserLabel" layoutX="618.0" layoutY="202.0" prefWidth="140.0" styleClass="errorLabel" text="errorUser" visible="false" wrapText="true" />
+         <Label layoutX="327.0" layoutY="241.0" styleClass="fieldLabel" text="Email">
+            <padding>
+               <Insets bottom="8.0" />
+            </padding>
+         </Label>
+         <TextField fx:id="emailField" focusTraversable="false" layoutX="327.0" layoutY="269.0" prefWidth="280.0" promptText="Wprowadź email" styleClass="inputField" />
+         <Label fx:id="errorMailLabel" layoutX="618.0" layoutY="251.0" prefHeight="60.0" prefWidth="280.0" styleClass="errorLabel" text="errorMail" visible="false" wrapText="true" />
+         <Label layoutX="327.0" layoutY="309.0" styleClass="fieldLabel" text="Hasło">
+            <padding>
+               <Insets bottom="8.0" />
+            </padding>
+         </Label>
+         <PasswordField fx:id="passwordField" focusTraversable="false" layoutX="327.0" layoutY="337.0" prefWidth="280.0" promptText="Wprowadź hasło" styleClass="inputField" />
+         <Label fx:id="errorPasswordLabel" layoutX="618.0" layoutY="319.0" prefHeight="60.0" prefWidth="280.0" styleClass="errorLabel" text="errorPassword" visible="false" wrapText="true" />
+         <Label layoutX="327.0" layoutY="381.0" styleClass="fieldLabel" text="Potwierdź hasło">
+            <padding>
+               <Insets bottom="8.0" />
+            </padding>
+         </Label>
+         <PasswordField fx:id="passwordConfirmField" focusTraversable="false" layoutX="327.0" layoutY="409.0" prefWidth="280.0" promptText="Potwierdź hasło" styleClass="inputField" />
+         <Label fx:id="errorConfirmLabel" layoutX="618.0" layoutY="414.0" prefWidth="140.0" styleClass="errorLabel" text="errorConfirm" visible="false" wrapText="true" />
+         <Button fx:id="saveButton" layoutX="378.0" layoutY="479.0" onAction="#saveButtonClick" prefHeight="34.0" prefWidth="179.0" styleClass="saveButton" text="Zapisz zmiany" />
+         <Label fx:id="saveLabel" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="292.0" layoutY="109.0" styleClass="saveLabel" text="Pomyślnie zaktualizowano dane" />
+         <Label layoutX="322.0" layoutY="49.0" styleClass="headerLabel" text="Zmiana twoich danych" />
+      </children>
+   </Pane>
 
 
     <stylesheets>
         <URL value="@../../styles/main.css" />
-        <URL value="@../../styles/ranking.css" />
+        <URL value="@../../styles/setting.css" />
     </stylesheets>
 
 

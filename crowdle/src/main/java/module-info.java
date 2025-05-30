@@ -15,11 +15,12 @@ module com.crowdle {
 
     exports com.crowdle.model to org.hibernate.orm.core;
 
-    opens com.crowdle.model to org.hibernate.orm.core;
+    opens com.crowdle.model to org.hibernate.orm.core, javafx.base;
     exports com.crowdle.controller;
     opens com.crowdle.controller to javafx.fxml;
     exports com.crowdle.dao;
     opens com.crowdle.dao;
+
 
     uses org.hibernate.Session;
 }

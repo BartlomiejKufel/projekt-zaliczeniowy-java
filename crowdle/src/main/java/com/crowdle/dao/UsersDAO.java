@@ -1,14 +1,9 @@
 package com.crowdle.dao;
 
-import com.crowdle.ApplicationInfo;
 import com.crowdle.model.Ranking;
 import com.crowdle.model.Users;
 import com.crowdle.utility.HibernateUtility;
-import com.crowdle.utility.PageMenagerUtility;
-import javafx.stage.Stage;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -28,6 +23,19 @@ public class UsersDAO {
                 return null;
             }
             return users.getFirst();
+        }
+    }
+
+    public static List<Users> getUsers(){
+        try (Session session = HibernateUtility.getSessionFactory().openSession()) {
+            List<Users> users = session.createQuery("From Users", Users.class)
+                    .getResultList();
+
+            if (users.isEmpty()) {
+                return null;
+            }
+
+            return users;
         }
     }
 
@@ -62,4 +70,18 @@ public class UsersDAO {
     }
 
 
+    public static void updateUser(int id, String newUsername, String newEmail, String newPassword) {
+        try(Session session = HibernateUtility.getSessionFactory().openSession()){
+            String query ="UPDATE Users SET username = :username, email = :email, password = :password WHERE userId = :id";
+            session.beginTransaction();
+            session.createQuery(query)
+                    .setParameter("username", newUsername)
+                    .setParameter("password", newPassword)
+                    .setParameter("email", newEmail)
+                    .setParameter("id", id)
+                    .executeUpdate();
+
+            session.getTransaction().commit();
+        }
+    }
 }

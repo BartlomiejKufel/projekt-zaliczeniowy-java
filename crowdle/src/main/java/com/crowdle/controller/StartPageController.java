@@ -83,6 +83,10 @@ public class StartPageController {
 
     }
 
+    @FXML
+    public void adminButtonClick(ActionEvent actionEvent) {
+        Stage stage = (Stage) rankingButton.getScene().getWindow();
+        PageMenagerUtility.goToAdminPage(stage);
 
-
+    }
 }

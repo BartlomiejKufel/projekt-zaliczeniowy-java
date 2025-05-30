@@ -8,6 +8,7 @@ import org.hibernate.cfg.Configuration;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Entity
@@ -19,13 +20,13 @@ public class Users {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userId;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = false, length = 50,  name = "username")
     private String username;
 
-    @Column(nullable = false, length = 255)
+    @Column(nullable = false, length = 255, name = "email")
     private String email;
 
-    @Column(nullable = false, length = 30)
+    @Column(nullable = false, length = 30, name = "password")
     private String password;
 
     @Column(name = "\"createdAt\"")
@@ -85,8 +86,9 @@ public class Users {
         this.password = password;
     }
 
-    public Timestamp getCreatedAt() {
-        return createdAt;
+    public String getCreatedAt() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        return createdAt.toLocalDateTime().format(formatter)+" r";
     }
 
     public void setCreatedAt(Timestamp createdAt) {
@@ -96,6 +98,9 @@ public class Users {
     public boolean isAdmin() {
         return isAdmin;
     }
+
+    public String getIsAdmin() {return isAdmin ? "TAK" : "NIE";}
+
 
     public void setAdmin(boolean admin) {
         isAdmin = admin;
