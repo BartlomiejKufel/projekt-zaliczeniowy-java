@@ -49,12 +49,14 @@ public class RankingPageController {
         saveButton.setVisible(UsersDAO.getUser(ApplicationInfo.LoggedUserId).isAdmin());
     }
 
+    @FXML
     public void backButtonClick(ActionEvent actionEvent) {
         Stage stage = (Stage) backButton.getScene().getWindow();
         PageMenagerUtility.goToStartPage(stage);
 
     }
 
+    @FXML
     public void saveButtonClick(ActionEvent actionEvent) {
         Stage stage = (Stage) saveButton.getScene().getWindow();
         CsvUtility.exportRanking(RankingDAO.getRanking(), stage);

@@ -77,12 +77,13 @@ public class AdminPageController {
 
     }
 
-
+    @FXML
     public void backButtonClick(ActionEvent actionEvent) {
         Stage stage = (Stage) backButton.getScene().getWindow();
         PageMenagerUtility.goToStartPage(stage);
     }
 
+    @FXML
     public void deleteButtonClick(ActionEvent actionEvent) {
         Users selectedUser = usersTableView.getSelectionModel().getSelectedItem();
 
@@ -104,8 +105,11 @@ public class AdminPageController {
         }
     }
 
+    @FXML
     public void editButtonClick(ActionEvent actionEvent) {
+        Users selectedUser = usersTableView.getSelectionModel().getSelectedItem();
 
+        PageMenagerUtility.goToAdminEditPage(selectedUser);
     }
 
     private void refresh(){

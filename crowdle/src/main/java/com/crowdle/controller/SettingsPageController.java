@@ -52,7 +52,7 @@ public class SettingsPageController {
 
     }
 
-
+    @FXML
     public void backButtonClick(ActionEvent actionEvent) {
         Stage stage = (Stage) backButton.getScene().getWindow();
         PageMenagerUtility.goToStartPage(stage);
@@ -60,14 +60,7 @@ public class SettingsPageController {
     }
 
 
-    private void setUserInformation(){
-        loggedUser = UsersDAO.getUser(ApplicationInfo.LoggedUserId);
-        usernameField.setText(loggedUser.getUsername());
-        emailField.setText(loggedUser.getEmail());
-        passwordField.setText(loggedUser.getPassword());
-        passwordConfirmField.setText(loggedUser.getPassword());
-    }
-
+    @FXML
     public void saveButtonClick(ActionEvent actionEvent) {
         errorConfirmLabel.setVisible(false);
         errorPasswordLabel.setVisible(false);
@@ -95,6 +88,16 @@ public class SettingsPageController {
         showButton();
         saveLabel.setVisible(true);
     }
+
+
+    private void setUserInformation(){
+        loggedUser = UsersDAO.getUser(ApplicationInfo.LoggedUserId);
+        usernameField.setText(loggedUser.getUsername());
+        emailField.setText(loggedUser.getEmail());
+        passwordField.setText(loggedUser.getPassword());
+        passwordConfirmField.setText(loggedUser.getPassword());
+    }
+
 
     private void showButton() {
         saveLabel.setVisible(false);

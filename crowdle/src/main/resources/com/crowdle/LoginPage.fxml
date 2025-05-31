@@ -52,12 +52,12 @@
       </Label>
         <PasswordField fx:id="passwordField" focusTraversable="false" layoutX="180.0" layoutY="194.0" prefHeight="24.0" prefWidth="280.0" promptText="Wprowadź hasło" styleClass="inputField" />
       <Label fx:id="passwordErrorLabel" layoutX="471.0" layoutY="199.0" prefHeight="15.0" prefWidth="140.0" styleClass="errorLabel" text="errorPassword" visible="false" />
-        <Button fx:id="LoginButton" layoutX="245.0" layoutY="291.0" onAction="#loginSubmitButtonClick" prefHeight="30.0" prefWidth="150.0" styleClass="loginButton" text="Zaloguj">
+        <Button fx:id="loginButton" layoutX="245.0" layoutY="291.0" onAction="#loginButtonClick" prefHeight="30.0" prefWidth="150.0" styleClass="loginButton" text="Zaloguj">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
       </Button>
-        <Button fx:id="RegisterButton" layoutX="245.0" layoutY="344.0" onAction="#signUpSubmitButtonClick" prefHeight="30.0" prefWidth="150.0" styleClass="loginButton" text="Zarejestruj" />
+        <Button fx:id="registerButton" layoutX="245.0" layoutY="344.0" onAction="#signUpButtonClick" prefHeight="30.0" prefWidth="150.0" styleClass="loginButton" text="Zarejestruj" />
     </Pane>
     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="banerPane" GridPane.columnSpan="3" GridPane.rowIndex="2">
         <Label layoutX="1180.0" layoutY="36.0" styleClass="versionLabel" text="v 1.0.1" />

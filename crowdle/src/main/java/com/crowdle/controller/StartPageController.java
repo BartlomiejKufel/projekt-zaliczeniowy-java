@@ -1,15 +1,11 @@
 package com.crowdle.controller;
 
-import com.crowdle.dao.RankingDTO;
 import com.crowdle.model.Ranking;
 import com.crowdle.ApplicationInfo;
 import com.crowdle.utility.HibernateUtility;
 import com.crowdle.utility.PageMenagerUtility;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -20,7 +16,6 @@ import org.hibernate.Session;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.List;
 
 public class StartPageController {
 
@@ -65,19 +60,19 @@ public class StartPageController {
 
 
     @FXML
-    public void LogoutButtonClick() {
+    public void logoutButtonClick() {
         Stage stage = (Stage) logoutButton.getScene().getWindow();
         PageMenagerUtility.goToLoginPage(stage);
     }
 
     @FXML
-    public void SettingButtonClick(ActionEvent actionEvent) {
+    public void settingButtonClick(ActionEvent actionEvent) {
         Stage stage = (Stage) settingButton.getScene().getWindow();
         PageMenagerUtility.goToSettingsPage(stage);
     }
 
     @FXML
-    public void RankingButtonClick(ActionEvent actionEvent) {
+    public void rankingButtonClick(ActionEvent actionEvent) {
         Stage stage = (Stage) rankingButton.getScene().getWindow();
         PageMenagerUtility.goToRankingPage(stage);
 
@@ -87,6 +82,12 @@ public class StartPageController {
     public void adminButtonClick(ActionEvent actionEvent) {
         Stage stage = (Stage) rankingButton.getScene().getWindow();
         PageMenagerUtility.goToAdminPage(stage);
+
+    }
+
+    @FXML
+    public void playButtonClick(ActionEvent actionEvent) {
+        //select * from topics order by random() limit 2 może się przydać do znajdywania pytań
 
     }
 }

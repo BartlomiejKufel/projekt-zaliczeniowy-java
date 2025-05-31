@@ -1,9 +1,15 @@
 package com.crowdle.utility;
 
+import com.crowdle.ApplicationInfo;
+import com.crowdle.controller.AdminEditPageController;
+import com.crowdle.model.Users;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
+
+import java.io.FileInputStream;
 
 
 public class PageMenagerUtility {
@@ -75,6 +81,28 @@ public class PageMenagerUtility {
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.show();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static void goToAdminEditPage(Users selectedUser) {
+        try {
+            FXMLLoader loader = new FXMLLoader(PageMenagerUtility.class.getResource("/com/crowdle/AdminEditPage.fxml"));
+            Parent root = loader.load();
+
+            AdminEditPageController controller = loader.getController();
+            controller.setSelectedUser(selectedUser);
+
+            Scene scene = new Scene(root, 700, 520);
+            Image icon = new Image(new FileInputStream("images/logo_white.png"));
+            Stage stage = new Stage();
+            stage.getIcons().add(icon);
+            stage.setTitle(ApplicationInfo.Title+ ": Edycja użytkownika");
+
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

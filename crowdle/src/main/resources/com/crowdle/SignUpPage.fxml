@@ -64,8 +64,8 @@
         </Label>
         <PasswordField fx:id="passwordConfirmField" focusTraversable="false" layoutX="180.0" layoutY="275.0" prefWidth="280.0" promptText="Potwierdź hasło" styleClass="inputField" />
         <Label fx:id="errorConfirmLabel" layoutX="471.0" layoutY="280.0" prefWidth="140.0" styleClass="errorLabel" text="errorConfirm" visible="false" wrapText="true" />
-        <Button fx:id="RegisterButton" layoutX="245.0" layoutY="349.0" onAction="#registerButtonClick" prefHeight="30.0" prefWidth="150.0" styleClass="loginButton" text="Zarejestruj" />
-        <Button fx:id="GoBackButton" layoutX="245.0" layoutY="404.0" onAction="#goBackButtonClick" prefHeight="30.0" prefWidth="150.0" styleClass="loginButton" text="Powrót" />
+        <Button fx:id="registerButton" layoutX="245.0" layoutY="349.0" onAction="#registerButtonClick" prefHeight="30.0" prefWidth="150.0" styleClass="loginButton" text="Zarejestruj" />
+        <Button fx:id="goBackButton" layoutX="245.0" layoutY="404.0" onAction="#goBackButtonClick" prefHeight="30.0" prefWidth="150.0" styleClass="loginButton" text="Powrót" />
     </Pane>
 
     <stylesheets>

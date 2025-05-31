@@ -60,10 +60,10 @@
    </Pane>
    <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
       <children>
-            <Button fx:id="gameButton" alignment="BASELINE_LEFT" layoutX="182.0" layoutY="34.0" prefHeight="100.0" prefWidth="650.0" styleClass="playButton" text="GRAJ" />
-            <Button fx:id="rankingButton" alignment="BASELINE_LEFT" layoutX="182.0" layoutY="168.0" onAction="#RankingButtonClick" prefHeight="100.0" prefWidth="650.0" styleClass="rankingButton" text="RANKING" />
-            <Button fx:id="settingButton" alignment="BASELINE_LEFT" layoutX="182.0" layoutY="311.0" onAction="#SettingButtonClick" prefHeight="100.0" prefWidth="650.0" styleClass="settingButton" text="USTAWIENIA" />
-            <Button fx:id="logoutButton" alignment="BASELINE_LEFT" layoutX="182.0" layoutY="442.0" onAction="#LogoutButtonClick" prefHeight="100.0" prefWidth="650.0" styleClass="logoutButton" text="WYLOGUJ" />
+            <Button fx:id="gameButton" alignment="BASELINE_LEFT" layoutX="182.0" layoutY="34.0" onAction="#playButtonClick" prefHeight="100.0" prefWidth="650.0" styleClass="playButton" text="GRAJ" />
+            <Button fx:id="rankingButton" alignment="BASELINE_LEFT" layoutX="182.0" layoutY="168.0" onAction="#rankingButtonClick" prefHeight="100.0" prefWidth="650.0" styleClass="rankingButton" text="RANKING" />
+            <Button fx:id="settingButton" alignment="BASELINE_LEFT" layoutX="182.0" layoutY="311.0" onAction="#settingButtonClick" prefHeight="100.0" prefWidth="650.0" styleClass="settingButton" text="USTAWIENIA" />
+            <Button fx:id="logoutButton" alignment="BASELINE_LEFT" layoutX="182.0" layoutY="442.0" onAction="#logoutButtonClick" prefHeight="100.0" prefWidth="650.0" styleClass="logoutButton" text="WYLOGUJ" />
       </children>
    </Pane>
    <Pane prefHeight="200.0" prefWidth="200.0" styleClass="banerPane" GridPane.columnSpan="2" GridPane.rowIndex="2">

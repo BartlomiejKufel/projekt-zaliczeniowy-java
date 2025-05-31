@@ -23,7 +23,6 @@ public class MainApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("StartPage.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), ApplicationInfo.WindowWidth, ApplicationInfo.WindowHeight);
-
         Image icon = new Image(new FileInputStream("images/logo_white.png"));
         stage.getIcons().add(icon);
         stage.setTitle(ApplicationInfo.Title);

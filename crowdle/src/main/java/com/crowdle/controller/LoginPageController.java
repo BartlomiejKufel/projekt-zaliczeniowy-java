@@ -23,8 +23,8 @@ public class LoginPageController {
     @FXML public TextField usernameField;
     @FXML public ImageView logoImage;
     @FXML public GridPane root;
-    @FXML public Button LoginButton;
-    @FXML public Button RegisterButton;
+    @FXML public Button loginButton;
+    @FXML public Button registerButton;
     @FXML public Label errorLabel;
     @FXML public Label usernameErrorLabel;
     @FXML public Label passwordErrorLabel;
@@ -39,7 +39,7 @@ public class LoginPageController {
     }
 
     @FXML
-    protected void loginSubmitButtonClick(){
+    protected void loginButtonClick(){
         errorLabel.setVisible(false);
         usernameErrorLabel.setVisible(false);
         passwordErrorLabel.setVisible(false);
@@ -56,15 +56,15 @@ public class LoginPageController {
         Users user = UsersDAO.getUser(usernameToCheck,passwordToCheck);
         if(user!=null) {
             ApplicationInfo.LoggedUserId = user.getUserId();
-            Stage stage = (Stage) LoginButton.getScene().getWindow();
+            Stage stage = (Stage) loginButton.getScene().getWindow();
             PageMenagerUtility.goToStartPage(stage);
 
         }else{errorLabel.setText("Złe dane logowania!");errorLabel.setVisible(true);}
     }
 
     @FXML
-    public void signUpSubmitButtonClick(ActionEvent actionEvent) {
-        Stage stage = (Stage) RegisterButton.getScene().getWindow();
+    public void signUpButtonClick(ActionEvent actionEvent) {
+        Stage stage = (Stage) registerButton.getScene().getWindow();
         PageMenagerUtility.goToSignUpPage(stage);
 
     }

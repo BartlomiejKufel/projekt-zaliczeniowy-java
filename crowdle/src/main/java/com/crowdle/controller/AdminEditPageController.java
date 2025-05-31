@@ -1,7 +1,7 @@
 package com.crowdle.controller;
 
 import com.crowdle.dao.UsersDAO;
-import com.crowdle.utility.PageMenagerUtility;
+import com.crowdle.model.Users;
 import com.crowdle.utility.ValidationUtility;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,43 +9,27 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+public class AdminEditPageController {
 
-public class SignUpPageController {
-    @FXML public Button registerButton;
-    @FXML public Button goBackButton;
-    @FXML public TextField usernameField;
-    @FXML public PasswordField passwordField;
-    @FXML public PasswordField passwordConfirmField;
-    @FXML public ImageView logoImage;
-    @FXML public TextField emailField;
     @FXML public GridPane root;
-    @FXML public Label errorConfirmLabel;
-    @FXML public Label errorPasswordLabel;
-    @FXML public Label errorMailLabel;
+    @FXML public Button saveButton;
+    @FXML public Button reloadButton;
+    @FXML public TextField usernameField;
     @FXML public Label errorUserLabel;
+    @FXML public TextField emailField;
+    @FXML public Label errorMailLabel;
+    @FXML public PasswordField passwordField;
+    @FXML public Label errorPasswordLabel;
+    @FXML public PasswordField passwordConfirmField;
+    @FXML public Label errorConfirmLabel;
+
+    private Users selectedUser;
 
     @FXML
-    public void initialize() throws FileNotFoundException {
-        Image baner = new Image(new FileInputStream("images/baner_black.png"));
-        logoImage.setImage(baner);
-
-    }
-
-    @FXML
-    public void registerButtonClick(ActionEvent actionEvent) {
-        errorConfirmLabel.setVisible(false);
-        errorPasswordLabel.setVisible(false);
-        errorMailLabel.setVisible(false);
-        errorUserLabel.setVisible(false);
-
-
+    public void saveButtonClick(ActionEvent actionEvent) {
         String newUsername = usernameField.getText();
         String newPassword = passwordField.getText();
         String confirmPassword = passwordConfirmField.getText();
@@ -61,17 +45,29 @@ public class SignUpPageController {
         else if(!newPassword.equals(confirmPassword)){errorConfirmLabel.setText("Błędne hasło!"); errorConfirmLabel.setVisible(true); error=true;}
         if(error) return;
 
-        UsersDAO.addUser(newUsername, newEmail,newPassword);
+        UsersDAO.updateUser(selectedUser.getUserId(), newUsername, newEmail,newPassword);
 
-        Stage stage = (Stage) registerButton.getScene().getWindow();
-        PageMenagerUtility.goToLoginPage(stage);
-
+        Stage stage = (Stage) saveButton.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
-    public void goBackButtonClick(ActionEvent actionEvent) {
-        Stage stage = (Stage) goBackButton.getScene().getWindow();
-        PageMenagerUtility.goToLoginPage(stage);
+    public void reloadButtonClick(ActionEvent actionEvent) {
+        reload();
+    }
 
+
+    public void setSelectedUser(Users user) {
+        this.selectedUser = user;
+        reload();
+    }
+
+    private void reload(){
+        if(!(selectedUser == null)) {
+            usernameField.setText(selectedUser.getUsername());
+            emailField.setText(selectedUser.getEmail());
+            passwordField.setText(selectedUser.getPassword());
+            passwordConfirmField.setText(selectedUser.getPassword());
+        }
     }
 }
