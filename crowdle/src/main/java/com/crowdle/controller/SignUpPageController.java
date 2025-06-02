@@ -53,8 +53,10 @@ public class SignUpPageController {
         boolean error=false;
 
         if(newUsername.isEmpty()){errorUserLabel.setText("Puste pole!"); errorUserLabel.setVisible(true);error=true;}
+        else if(UsersDAO.isUsernameInDB(newUsername)) {errorUserLabel.setText("Użytkownik już istnieje!"); errorUserLabel.setVisible(true);error=true;}
         if(newEmail.isEmpty()){errorMailLabel.setText("Puste pole!");errorMailLabel.setVisible(true);error=true;}
         else if (!ValidationUtility.isValidEmail(newEmail)) {errorMailLabel.setText("Niepoprawny adres e-mail! Upewnij się, że zawiera znak '@' oraz poprawną nazwę domeny (np. example.com)"); errorMailLabel.setVisible(true); error=true;}
+        else if(UsersDAO.isEmailInDB(newEmail)){errorMailLabel.setText("Taki email jest już zapisany!"); errorMailLabel.setVisible(true); error=true;}
         if(newPassword.isEmpty()){errorPasswordLabel.setText("Puste pole!");errorPasswordLabel.setVisible(true); error=true;}
         else if (!ValidationUtility.isValidPassword(newPassword)){errorPasswordLabel.setText("Hasło powinno zawierać co najmniej 8 znaków, w tym przynajmniej jedną wielką literę, jedną małą literę, jedną cyfrę oraz jeden znak specjalny!");errorPasswordLabel.setVisible(true); error=true;}
         if(confirmPassword.isEmpty()){errorConfirmLabel.setText("Puste pole!");errorConfirmLabel.setVisible(true); error=true;}

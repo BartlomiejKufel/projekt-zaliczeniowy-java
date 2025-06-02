@@ -1,0 +1,21 @@
+.notificationTreeView{
+    -fx-background-color: #111111;
+}
+
+.notificationTreeView .tree-cell {
+    -fx-padding: 6 0 6 0;
+    -fx-text-fill: #f3f3f3;
+    -fx-background-color: #000000;
+    -fx-font-family: "DejaVu Sans Mono";
+    -fx-font-size: 13px;
+}
+
+.notificationTreeView .tree-cell:selected {
+    -fx-background-color: #000000;
+    -fx-text-fill: #f3f3f3;
+}
+
+.notificationTreeView .scroll-bar {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}

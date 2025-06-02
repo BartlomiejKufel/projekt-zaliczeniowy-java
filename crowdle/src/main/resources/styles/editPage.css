@@ -1,0 +1,42 @@
+.saveButton{
+    -fx-background-color: #224a32;
+    -fx-text-fill: #f3f3f3;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+
+    -fx-border-color: #f3f3f3;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-style: solid;
+}
+
+.saveButton:hover {
+    -fx-text-fill: #a3ffb8;         
+    -fx-border-color: #a3ffb8;      
+}
+
+.refreshButton{
+    -fx-background-color: #0d499a;
+    -fx-text-fill: #f3f3f3;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+
+    -fx-border-color: #f3f3f3;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-style: solid;
+}
+
+.refeshButton:hover {
+    -fx-text-fill: #b3c5dc;         
+    -fx-border-color: #b3c5dc;      
+}
+
+
+.fieldLabel{
+    -fx-font-size: 16px;
+    -fx-text-fill: #f3f3f3;
+    -fx-font-weight: bold;
+}
+
+.inputField{
+    -fx-background-color:#000000;
+}

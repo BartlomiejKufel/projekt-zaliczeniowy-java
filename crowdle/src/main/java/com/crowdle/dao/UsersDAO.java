@@ -103,4 +103,33 @@ public class UsersDAO {
             session.getTransaction().commit();
         }
     }
+
+
+    public static boolean isUsernameInDB(String username){
+        try(Session session = HibernateUtility.getSessionFactory().openSession()){
+        String query = "FROM Users WHERE username = :username";
+        List<Users> users = session.createQuery(query, Users.class)
+                .setParameter("username", username)
+                .getResultList();
+
+        if (users.isEmpty()) {
+            return false;
+        }
+        return true;
+        }
+    }
+
+    public static boolean isEmailInDB(String email){
+        try(Session session = HibernateUtility.getSessionFactory().openSession()){
+            String query = "FROM Users WHERE email = :email";
+            List<Users> users = session.createQuery(query, Users.class)
+                    .setParameter("email", email)
+                    .getResultList();
+
+            if (users.isEmpty()) {
+                return false;
+            }
+            return true;
+        }
+    }
 }

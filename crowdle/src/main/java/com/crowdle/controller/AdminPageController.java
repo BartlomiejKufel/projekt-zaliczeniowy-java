@@ -1,10 +1,7 @@
 package com.crowdle.controller;
 
-import com.crowdle.dao.RankingDAO;
 import com.crowdle.dao.UsersDAO;
-import com.crowdle.model.Ranking;
 import com.crowdle.model.Users;
-import com.crowdle.utility.HibernateUtility;
 import com.crowdle.utility.PageMenagerUtility;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,7 +13,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import org.hibernate.Session;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -37,6 +33,8 @@ public class AdminPageController {
     @FXML public Label selectedLabel;
     @FXML public Button deleteButton;
     @FXML public Button editButton;
+    public Button goToNotificationButton;
+    public Button questionsButton;
 
 
     @FXML
@@ -108,12 +106,33 @@ public class AdminPageController {
     @FXML
     public void editButtonClick(ActionEvent actionEvent) {
         Users selectedUser = usersTableView.getSelectionModel().getSelectedItem();
-
-        PageMenagerUtility.goToAdminEditPage(selectedUser);
+        if(PageMenagerUtility.goToAdminEditWindow(selectedUser)) refresh();
     }
 
     private void refresh(){
         ObservableList<Users> rankingObservableList = FXCollections.observableArrayList(UsersDAO.getUsers());
         usersTableView.setItems(rankingObservableList);
+    }
+
+    @FXML
+    public void notificationAdminButtonClick(ActionEvent actionEvent) {
+        Stage stage = (Stage) goToNotificationButton.getScene().getWindow();
+        PageMenagerUtility.goToAdminNotificationPage(stage);
+    }
+
+    @FXML
+    public void questionsButtonClick(ActionEvent actionEvent) {
+        Stage stage = (Stage) questionsButton.getScene().getWindow();
+        PageMenagerUtility.goToAdminQuestionsPage(stage);
+    }
+
+    @FXML
+    public void refreshButtonClick(ActionEvent actionEvent) {
+        refresh();
+    }
+
+    @FXML
+    public void notificationButtonClick(ActionEvent actionEvent) {
+        PageMenagerUtility.goToNotificationWindow();
     }
 }

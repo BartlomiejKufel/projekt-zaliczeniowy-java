@@ -32,3 +32,27 @@
 .textColor{
     -fx-text-fill: #f3f3f3;
 }
+
+
+.notificationButton{
+    -fx-background-color: #465554;
+    -fx-text-fill: #f3f3f3;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+
+    -fx-border-color: #f3f3f3;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-style: solid;
+}
+
+.notificationButton:hover {
+    -fx-text-fill: #c6f7f5;         
+    -fx-border-color: #c6f7f5;      
+}
+
+
+.mainPane{
+    -fx-border-color: #f3f3f3;
+    -fx-border-width: 3px 3px 3px 0px;
+    -fx-border-style: solid;
+}

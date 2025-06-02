@@ -31,7 +31,7 @@
       </GridPane.margin>
       <styleClass>
          <String fx:value="banerPane" />
-         <String fx:value="userPane" />
+         <String fx:value="mainPane" />
       </styleClass>
    </Pane>
    <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
@@ -85,8 +85,8 @@
       </children></Pane>
      <HBox alignment="CENTER_RIGHT" spacing="10" GridPane.columnIndex="1">
       <children>
-            <Button fx:id="adminButton" text="Admin" onAction="#adminButtonClick"/>
-            <Button fx:id="notificationButton" text="Powiadomienia">
+            <Button fx:id="adminButton" onAction="#adminButtonClick" styleClass="adminButton" text="ADMIN" />
+            <Button fx:id="notificationButton" onAction="#notificationButtonClick" styleClass="notificationButton" text="NOWOŚCI">
             <HBox.margin>
                <Insets right="10.0" />
             </HBox.margin>

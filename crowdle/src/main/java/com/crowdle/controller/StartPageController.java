@@ -90,4 +90,9 @@ public class StartPageController {
         //select * from topics order by random() limit 2 może się przydać do znajdywania pytań
 
     }
+
+    @FXML
+    public void notificationButtonClick(ActionEvent actionEvent) {
+        PageMenagerUtility.goToNotificationWindow();
+    }
 }

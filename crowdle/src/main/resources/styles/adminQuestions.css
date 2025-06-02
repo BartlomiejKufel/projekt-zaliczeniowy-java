@@ -1,0 +1,50 @@
+.usersButton{
+    -fx-background-color: #224a32;
+    -fx-text-fill: #f3f3f3;
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+
+    -fx-border-color: #f3f3f3;
+    -fx-border-width: 3px 0px 3px 3px;
+    -fx-border-style: solid;
+}
+
+.usersButton:hover{
+    -fx-text-fill: #a3ffb8;         
+    -fx-border-color: #a3ffb8;   
+}
+
+
+.notificationsButton{
+    -fx-background-color: #222e4a;
+    -fx-text-fill: #f3f3f3;
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+
+    -fx-border-color: #f3f3f3;
+    -fx-border-width: 3px 0px 3px 3px;
+    -fx-border-style: solid;
+}
+
+.notificationsButton:hover{
+    -fx-text-fill: #a3d2ff;         
+    -fx-border-color: #a3d2ff;   
+}
+
+
+
+.backButton{
+    -fx-background-color: #3e2936;
+    -fx-text-fill: #f3f3f3;
+    -fx-font-size: 35px;
+    -fx-font-weight: bold;
+
+    -fx-border-color: #f3f3f3;
+    -fx-border-width: 3px 0px 3px 3px;
+    -fx-border-style: solid;
+}
+
+.backButton:hover{
+    -fx-text-fill: #efb6d8;         
+    -fx-border-color: #efb6d8;   
+}

@@ -86,7 +86,7 @@ public class PageMenagerUtility {
         }
     }
 
-    public static void goToAdminEditPage(Users selectedUser) {
+    public static boolean goToAdminEditWindow(Users selectedUser) {
         try {
             FXMLLoader loader = new FXMLLoader(PageMenagerUtility.class.getResource("/com/crowdle/AdminEditPage.fxml"));
             Parent root = loader.load();
@@ -94,11 +94,59 @@ public class PageMenagerUtility {
             AdminEditPageController controller = loader.getController();
             controller.setSelectedUser(selectedUser);
 
-            Scene scene = new Scene(root, 700, 520);
+            Scene scene = new Scene(root, 900, 500);
             Image icon = new Image(new FileInputStream("images/logo_white.png"));
             Stage stage = new Stage();
             stage.getIcons().add(icon);
             stage.setTitle(ApplicationInfo.Title+ ": Edycja użytkownika");
+
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.showAndWait();
+            return true;
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
+
+    public static void goToAdminNotificationPage(Stage primaryStage) {
+        try {
+            FXMLLoader loader = new FXMLLoader(PageMenagerUtility.class.getResource("/com/crowdle/AdminNotificationPage.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+
+
+    public static void goToAdminQuestionsPage(Stage primaryStage) {
+        try {
+            FXMLLoader loader = new FXMLLoader(PageMenagerUtility.class.getResource("/com/crowdle/AdminQuestionsPage.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static void goToNotificationWindow() {
+        try {
+            FXMLLoader loader = new FXMLLoader(PageMenagerUtility.class.getResource("/com/crowdle/NotificationPage.fxml"));
+            Parent root = loader.load();
+
+            Scene scene = new Scene(root, 320, 500);
+            Image icon = new Image(new FileInputStream("images/logo_white.png"));
+            Stage stage = new Stage();
+            stage.getIcons().add(icon);
+            stage.setTitle(ApplicationInfo.Title+ ": Nowości");
 
             stage.setScene(scene);
             stage.setResizable(false);

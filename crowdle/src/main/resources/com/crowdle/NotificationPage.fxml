@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane fx:id="root" prefHeight="500.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.crowdle.controller.NotificationPageController">
+
+    <columnConstraints>
+        <ColumnConstraints percentWidth="100.0" />
+    </columnConstraints>
+
+    <rowConstraints>
+        <RowConstraints percentHeight="15.0" />
+        <RowConstraints percentHeight="85.0" />
+    </rowConstraints>
+   <Pane prefHeight="200.0" prefWidth="200.0" styleClass="banerPane">
+      <children>
+         <ImageView fx:id="iconImageView" fitHeight="72.0" fitWidth="91.0" layoutX="124.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../../../../../images/icon_crowdle.png" />
+            </image>
+         </ImageView>
+      </children>
+   </Pane>
+    <Pane prefHeight="200.0" prefWidth="200.0" styleClass="banerPane" GridPane.rowIndex="1">
+        <GridPane.margin>
+            <Insets bottom="20.0" top="20.0" />
+        </GridPane.margin>
+      <children>
+         <TreeView fx:id="notificationTreeView" layoutX="15.0" layoutY="13.0" prefHeight="360.0" prefWidth="290.0" showRoot="false" styleClass="notificationTreeView" />
+      </children>
+    </Pane>
+
+
+    <stylesheets>
+        <URL value="@../../styles/main.css" />
+        <URL value="@../../styles/notification.css" />
+    </stylesheets>
+
+
+</GridPane>

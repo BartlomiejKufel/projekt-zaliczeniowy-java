@@ -61,4 +61,9 @@ public class RankingPageController {
         Stage stage = (Stage) saveButton.getScene().getWindow();
         CsvUtility.exportRanking(RankingDAO.getRanking(), stage);
     }
+
+    @FXML
+    public void notificationButtonClick(ActionEvent actionEvent) {
+        PageMenagerUtility.goToNotificationWindow();
+    }
 }

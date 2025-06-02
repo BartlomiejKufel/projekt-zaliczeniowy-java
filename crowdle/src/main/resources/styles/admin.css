@@ -38,6 +38,23 @@
 }
 
 
+.refreshButton{
+    -fx-background-color: #0d499a;
+    -fx-text-fill: #f3f3f3;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+
+    -fx-border-color: #f3f3f3;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-style: solid;
+}
+
+.refreshButton:hover {
+    -fx-text-fill: #b3c5dc;         
+    -fx-border-color: #b3c5dc;      
+}
+
+
 
 .backButton{
     -fx-background-color: #3e2936;
@@ -90,4 +107,37 @@
 
 .table-row-cell:hover {
     -fx-background-color: #111111;
+}
+
+
+.notificationsButton{
+    -fx-background-color: #222e4a;
+    -fx-text-fill: #f3f3f3;
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+
+    -fx-border-color: #f3f3f3;
+    -fx-border-width: 3px 0px 3px 3px;
+    -fx-border-style: solid;
+}
+
+.notificationsButton:hover{
+    -fx-text-fill: #a3d2ff;         
+    -fx-border-color: #a3d2ff;   
+}
+
+.questionsButton{
+    -fx-background-color: #242336;
+    -fx-text-fill: #f3f3f3;
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+
+    -fx-border-color: #f3f3f3;
+    -fx-border-width: 3px 0px 3px 3px;
+    -fx-border-style: solid;
+}
+
+.questionsButton:hover{
+    -fx-text-fill: #a8a3e6;         
+    -fx-border-color: #a8a3e6;   
 }
