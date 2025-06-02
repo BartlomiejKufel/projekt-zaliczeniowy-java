@@ -33,8 +33,8 @@ public class AdminPageController {
     @FXML public Label selectedLabel;
     @FXML public Button deleteButton;
     @FXML public Button editButton;
-    public Button goToNotificationButton;
-    public Button questionsButton;
+    @FXML public Button goToNotificationButton;
+    @FXML public Button questionsButton;
 
 
     @FXML

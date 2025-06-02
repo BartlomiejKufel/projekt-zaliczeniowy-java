@@ -5,6 +5,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -63,8 +64,11 @@
          <String fx:value="mainPane" />
       </styleClass>
       <children>
-         <Button fx:id="choiceButton" layoutX="441.0" onAction="#choiceButtonClick" layoutY="223.0" mnemonicParsing="false" text="Wybierz plik" />
-         <Label layoutX="341.0" layoutY="146.0" styleClass="versionLabel" text="DODAJ PYTANIA Z PLIKU CSV" />
+         <Button fx:id="saveButton" layoutX="450.0" layoutY="470.0" mnemonicParsing="false" onAction="#saveButtonClick" styleClass="saveButton" text="Zapisz" />
+         <Label layoutX="341.0" layoutY="30.0" styleClass="versionLabel" text="DODAJ PYTANIA Z PLIKU CSV" />
+         <ListView fx:id="questionsListView" layoutX="92.0" layoutY="172.0" prefHeight="280.0" prefWidth="800.0" styleClass="questionsListView" />
+         <Button fx:id="choiceButton" layoutX="421.0" layoutY="121.0" mnemonicParsing="false" onAction="#choiceButtonClick" styleClass="selectButton" text="Wybierz plik" />
+         <Label fx:id="saveLabel" alignment="BASELINE_CENTER" layoutX="283.0" layoutY="75.0" prefHeight="25.0" prefWidth="419.0" styleClass="saveLabel" text="Zapisano do bazy" textAlignment="CENTER" />
       </children>
    </Pane>
    <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">

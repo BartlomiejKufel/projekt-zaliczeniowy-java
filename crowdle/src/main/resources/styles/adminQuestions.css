@@ -48,3 +48,59 @@
     -fx-text-fill: #efb6d8;         
     -fx-border-color: #efb6d8;   
 }
+
+.saveLabel{
+    -fx-font-size: 20px;
+    -fx-text-fill: #29ce6b;
+    -fx-font-weight: bold;
+}
+
+
+.saveButton{
+    -fx-background-color: #224a32;
+    -fx-text-fill: #f3f3f3;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+
+    -fx-border-color: #f3f3f3;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-style: solid;
+}
+
+.saveButton:hover {
+    -fx-text-fill: #a3ffb8;         
+    -fx-border-color: #a3ffb8;      
+}
+
+.selectButton{
+    -fx-background-color: #642a18;
+    -fx-text-fill: #f3f3f3;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+
+    -fx-border-color: #f3f3f3;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-style: solid;
+}
+
+.selectButton:hover {
+    -fx-text-fill: #ff9c6b;         
+    -fx-border-color: #ff9c6b;      
+}
+
+.questionsListView {
+    -fx-background-color: #000000;
+}
+
+.questionsListView .list-cell {
+    -fx-font-size: 13px;
+    -fx-background-color: #000000;
+    -fx-text-fill: #f3f3f3;
+    -fx-alignment: center-left;
+}
+
+
+.questionsListView .list-cell:selected {
+    -fx-background-color: #111111;
+
+}

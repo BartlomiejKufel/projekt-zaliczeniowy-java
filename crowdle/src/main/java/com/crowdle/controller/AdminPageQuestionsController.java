@@ -4,9 +4,13 @@ import com.crowdle.dao.QuestionsDAO;
 import com.crowdle.model.Questions;
 import com.crowdle.utility.CsvUtility;
 import com.crowdle.utility.PageMenagerUtility;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
@@ -14,6 +18,7 @@ import javafx.stage.Stage;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class AdminPageQuestionsController {
@@ -23,12 +28,18 @@ public class AdminPageQuestionsController {
     @FXML public Button userButton;
     @FXML public Button backButton;
     @FXML public Button goToNotificationButton;
-    public Button choiceButton;
+    @FXML public Button choiceButton;
+    @FXML public Button saveButton;
+    @FXML public Label saveLabel;
+    @FXML public ListView<Questions> questionsListView;
+    private List<Questions> questions;
 
     @FXML
     public void initialize() throws FileNotFoundException {
         Image iconImg = new Image(new FileInputStream("images/icon_crowdle.png"));
         iconImageView.setImage(iconImg);
+
+        saveLabel.setVisible(false);
     }
 
     @FXML
@@ -57,12 +68,31 @@ public class AdminPageQuestionsController {
 
     @FXML
     public void choiceButtonClick(ActionEvent actionEvent) {
-        Stage stage = (Stage) choiceButton.getScene().getWindow();
-        List<Questions> questions = CsvUtility.loadQuestionsFromCSV(stage);
+        saveLabel.setVisible(false);
+        if(questions != null && !questions.isEmpty()) questions.clear();
 
-        for (Questions qs: questions){
-            QuestionsDAO.addQuestion(qs);
+        Stage stage = (Stage) choiceButton.getScene().getWindow();
+        questions = CsvUtility.loadQuestionsFromCSV(stage);
+
+        refresh();
+    }
+
+    @FXML
+    public void saveButtonClick(ActionEvent actionEvent) {
+        if(!questions.isEmpty()){
+            for (Questions qs: questions){
+                QuestionsDAO.addQuestion(qs);
+            }
+
+            saveLabel.setText("Zapisano "+ questions.size() +" pytań do bazy");
+            saveLabel.setVisible(true);
+            questions.clear();
+            refresh();
         }
-        System.out.println("Dodano rekordy");
+    }
+
+    private void refresh(){
+        ObservableList<Questions> observableQuestions = FXCollections.observableArrayList(questions);
+        questionsListView.setItems(observableQuestions);
     }
 }

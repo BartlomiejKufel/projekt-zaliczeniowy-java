@@ -126,9 +126,7 @@ public class Questions {
 
     @Override
     public String toString() {
-        return "Questions{" +
-                "questionId=" + questionId +
-                ", content='" + content + '\'' +
+        return " content='" + content + '\'' +
                 ", answerA='" + answerA + '\'' +
                 ", answerB='" + answerB + '\'' +
                 ", answerC='" + answerC + '\'' +
@@ -136,7 +134,7 @@ public class Questions {
                 ", correctAnswer=" + correctAnswer +
                 ", topic=" + topic.getTopicId() +
                 ", difficulty=" + difficulty.getGameDifficultyId() +
-                '}';
+                ';';
     }
 }
 

@@ -71,7 +71,6 @@ public class CsvUtility {
                     int topicId = Integer.parseInt(values[6]);
                     int difficultyId = Integer.parseInt(values[7]);
 
-
                     questions.add(new Questions(content, answerA,answerB,answerC,answerD,correctAnswer,topicId,difficultyId));
                 }
 
