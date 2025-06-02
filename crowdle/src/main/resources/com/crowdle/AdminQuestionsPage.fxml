@@ -62,6 +62,10 @@
          <String fx:value="banerPane" />
          <String fx:value="mainPane" />
       </styleClass>
+      <children>
+         <Button fx:id="choiceButton" layoutX="441.0" onAction="#choiceButtonClick" layoutY="223.0" mnemonicParsing="false" text="Wybierz plik" />
+         <Label layoutX="341.0" layoutY="146.0" styleClass="versionLabel" text="DODAJ PYTANIA Z PLIKU CSV" />
+      </children>
    </Pane>
    <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
       <children>

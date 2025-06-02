@@ -21,9 +21,9 @@ import java.util.Optional;
 public class AdminPageController {
     @FXML public GridPane root;
     @FXML public Button backButton;
-    @FXML public TableView<Users> usersTableView;
     @FXML public ImageView iconImageView;
     @FXML public Button notificationButton;
+    @FXML public TableView<Users> usersTableView;
     @FXML public TableColumn<Users, Integer> idTableColumn;
     @FXML public TableColumn<Users, String> usernameTableColumn;
     @FXML public TableColumn<Users, String> emailTableColumn;

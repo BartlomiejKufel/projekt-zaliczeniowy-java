@@ -1,5 +1,7 @@
 package com.crowdle.model;
 
+import com.crowdle.dao.GameDifficultyDAO;
+import com.crowdle.dao.TopicsDAO;
 import jakarta.persistence.*;
 
 
@@ -28,22 +30,27 @@ public class Questions {
     @Column(name = "\"answerD\"")
     private String answerD;
 
-    @Enumerated(EnumType.STRING)
     @Column(name = "\"correctAnswer\"")
-    private CorrectAnswer correctAnswer;
-
-    public enum CorrectAnswer {
-        A, B, C, D
-    }
+    private String correctAnswer;
 
     @ManyToOne
-    @JoinColumn(name = "topicId")
+    @JoinColumn(name = "\"topicId\"")
     private Topics topic;
 
     @ManyToOne
-    @JoinColumn(name = "difficultyId")
+    @JoinColumn(name = "\"difficultyId\"")
     private GameDifficulty difficulty;
 
+    public Questions(String content, String answerA, String answerB, String answerC, String answerD, String correctAnswer, int topicId, int difficultyId) {
+        this.content = content;
+        this.answerA = answerA;
+        this.answerB = answerB;
+        this.answerC = answerC;
+        this.answerD = answerD;
+        this.correctAnswer = correctAnswer;
+        this.topic = TopicsDAO.getTopic(topicId);
+        this.difficulty = GameDifficultyDAO.getGameDifficulty(difficultyId);
+    }
 
     public int getQuestionId() {
         return questionId;
@@ -93,11 +100,11 @@ public class Questions {
         this.answerD = answerD;
     }
 
-    public CorrectAnswer getCorrectAnswer() {
+    public String getCorrectAnswer() {
         return correctAnswer;
     }
 
-    public void setCorrectAnswer(CorrectAnswer correctAnswer) {
+    public void setCorrectAnswer(String correctAnswer) {
         this.correctAnswer = correctAnswer;
     }
 
@@ -115,6 +122,21 @@ public class Questions {
 
     public void setDifficulty(GameDifficulty difficulty) {
         this.difficulty = difficulty;
+    }
+
+    @Override
+    public String toString() {
+        return "Questions{" +
+                "questionId=" + questionId +
+                ", content='" + content + '\'' +
+                ", answerA='" + answerA + '\'' +
+                ", answerB='" + answerB + '\'' +
+                ", answerC='" + answerC + '\'' +
+                ", answerD='" + answerD + '\'' +
+                ", correctAnswer=" + correctAnswer +
+                ", topic=" + topic.getTopicId() +
+                ", difficulty=" + difficulty.getGameDifficultyId() +
+                '}';
     }
 }
 

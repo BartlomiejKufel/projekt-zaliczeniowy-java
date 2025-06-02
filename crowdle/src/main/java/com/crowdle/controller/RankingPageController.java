@@ -59,7 +59,7 @@ public class RankingPageController {
     @FXML
     public void saveButtonClick(ActionEvent actionEvent) {
         Stage stage = (Stage) saveButton.getScene().getWindow();
-        CsvUtility.exportRanking(RankingDAO.getRanking(), stage);
+        CsvUtility.exportRankingToCSV(RankingDAO.getRanking(), stage);
     }
 
     @FXML
