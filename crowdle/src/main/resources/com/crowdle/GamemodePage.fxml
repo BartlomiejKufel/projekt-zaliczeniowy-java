@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane fx:id="root" prefHeight="720" prefWidth="1280" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.crowdle.controller.StartPageController">
+<GridPane fx:id="root" prefHeight="720" prefWidth="1280" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.crowdle.controller.GamemodePageController">
 
     <columnConstraints>
         <ColumnConstraints percentWidth="35" />
@@ -61,19 +61,19 @@
    </Pane>
    <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
       <children>
-            <Button fx:id="gameButton" alignment="BASELINE_LEFT" layoutX="182.0" layoutY="34.0" onAction="#playButtonClick" prefHeight="100.0" prefWidth="650.0" styleClass="playButton" text="GRAJ">
+            <Button fx:id="easyButton" alignment="BASELINE_LEFT" layoutX="182.0" layoutY="34.0" onAction="#easyButtonClick" prefHeight="100.0" prefWidth="650.0" styleClass="playButton" text="ŁATWY">
             <cursor>
                <Cursor fx:constant="HAND" />
             </cursor></Button>
-            <Button fx:id="rankingButton" alignment="BASELINE_LEFT" layoutX="182.0" layoutY="168.0" onAction="#rankingButtonClick" prefHeight="100.0" prefWidth="650.0" styleClass="rankingButton" text="RANKING">
+            <Button fx:id="advanceButton" alignment="BASELINE_LEFT" layoutX="182.0" layoutY="168.0" onAction="#advanceButtonClick" prefHeight="100.0" prefWidth="650.0" styleClass="rankingButton" text="ŚREDNI">
             <cursor>
                <Cursor fx:constant="HAND" />
             </cursor></Button>
-            <Button fx:id="settingButton" alignment="BASELINE_LEFT" layoutX="182.0" layoutY="311.0" onAction="#settingButtonClick" prefHeight="100.0" prefWidth="650.0" styleClass="settingButton" text="USTAWIENIA">
+            <Button fx:id="hardButton" alignment="BASELINE_LEFT" layoutX="182.0" layoutY="311.0" onAction="#hardButtonClick" prefHeight="100.0" prefWidth="650.0" styleClass="settingButton" text="TRUDNY">
             <cursor>
                <Cursor fx:constant="HAND" />
             </cursor></Button>
-            <Button fx:id="logoutButton" alignment="BASELINE_LEFT" layoutX="182.0" layoutY="442.0" onAction="#logoutButtonClick" prefHeight="100.0" prefWidth="650.0" styleClass="logoutButton" text="WYLOGUJ">
+            <Button fx:id="backButton" alignment="BASELINE_LEFT" layoutX="532.0" layoutY="442.0" onAction="#backButtonClick" prefHeight="100.0" prefWidth="300.0" styleClass="logoutButton" text="POWRÓT">
             <cursor>
                <Cursor fx:constant="HAND" />
             </cursor></Button>
@@ -81,7 +81,7 @@
    </Pane>
    <Pane prefHeight="200.0" prefWidth="200.0" styleClass="banerPane" GridPane.columnSpan="2" GridPane.rowIndex="2">
       <children>
-            <Label layoutY="36.0" styleClass="versionLabel" text="HOME">
+            <Label layoutY="36.0" styleClass="versionLabel" text="HOME &gt; GAME MODES">
             <padding>
                <Insets left="10.0" />
             </padding></Label>
@@ -98,10 +98,6 @@
       </children></Pane>
      <HBox alignment="CENTER_RIGHT" spacing="10" GridPane.columnIndex="1">
       <children>
-            <Button fx:id="adminButton" onAction="#adminButtonClick" styleClass="adminButton" text="ADMIN">
-            <cursor>
-               <Cursor fx:constant="HAND" />
-            </cursor></Button>
             <Button fx:id="notificationButton" onAction="#notificationButtonClick" styleClass="notificationButton" text="NOWOŚCI">
             <HBox.margin>
                <Insets right="10.0" />

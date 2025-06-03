@@ -2,6 +2,7 @@
 
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -43,21 +44,33 @@
             <Insets bottom="8.0" />
          </padding>
       </Label>
-        <TextField fx:id="usernameField" focusTraversable="false" layoutX="180.0" layoutY="123.0" prefHeight="24.0" prefWidth="280.0" promptText="Wprowadź nazwę użytkownika" styleClass="inputField" />
+        <TextField fx:id="usernameField" focusTraversable="false" layoutX="180.0" layoutY="123.0" prefHeight="24.0" prefWidth="280.0" promptText="Wprowadź nazwę użytkownika" styleClass="inputField">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
       <Label fx:id="usernameErrorLabel" layoutX="471.0" layoutY="128.0" prefHeight="15.0" prefWidth="140.0" styleClass="errorLabel" text="errorUser" visible="false" />
         <Label layoutX="180.0" layoutY="166.0" styleClass="fieldLabel" text="Hasło">
          <padding>
             <Insets bottom="8.0" />
          </padding>
       </Label>
-        <PasswordField fx:id="passwordField" focusTraversable="false" layoutX="180.0" layoutY="194.0" prefHeight="24.0" prefWidth="280.0" promptText="Wprowadź hasło" styleClass="inputField" />
+        <PasswordField fx:id="passwordField" focusTraversable="false" layoutX="180.0" layoutY="194.0" prefHeight="24.0" prefWidth="280.0" promptText="Wprowadź hasło" styleClass="inputField">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></PasswordField>
       <Label fx:id="passwordErrorLabel" layoutX="471.0" layoutY="199.0" prefHeight="15.0" prefWidth="140.0" styleClass="errorLabel" text="errorPassword" visible="false" />
         <Button fx:id="loginButton" layoutX="245.0" layoutY="291.0" onAction="#loginButtonClick" prefHeight="30.0" prefWidth="150.0" styleClass="loginButton" text="Zaloguj">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
-        <Button fx:id="registerButton" layoutX="245.0" layoutY="344.0" onAction="#signUpButtonClick" prefHeight="30.0" prefWidth="150.0" styleClass="loginButton" text="Zarejestruj" />
+        <Button fx:id="registerButton" layoutX="245.0" layoutY="344.0" onAction="#signUpButtonClick" prefHeight="30.0" prefWidth="150.0" styleClass="loginButton" text="Zarejestruj">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
     </Pane>
     <Pane prefHeight="200.0" prefWidth="200.0" styleClass="banerPane" GridPane.columnSpan="3" GridPane.rowIndex="2">
         <Label layoutX="1180.0" layoutY="36.0" styleClass="versionLabel" text="v 1.0.1" />

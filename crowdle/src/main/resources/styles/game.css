@@ -1,0 +1,71 @@
+.gameButton{
+    -fx-text-fill: #f3f3f3;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+
+.A{
+    -fx-background-color: #996324;
+}
+
+.A:hover {
+    -fx-text-fill: #ffdfa3;         
+    -fx-border-color: #ffdfa3;      
+}
+
+.B{
+    -fx-background-color: #8c2900;
+}
+.B:hover {
+    -fx-text-fill: #ffdfa3;         
+    -fx-border-color: #ffdfa3;      
+}
+
+.C{
+    -fx-background-color: #312133;
+}
+.C:hover {
+    -fx-text-fill: #d8a1db;         
+    -fx-border-color: #d8a1db;      
+}
+
+
+.D{
+    -fx-background-color: #203060;
+}
+.D:hover {
+    -fx-text-fill: #dfddff;         
+    -fx-border-color: #dfddff;      
+}
+
+.rightButton{
+    -fx-border-color: #f3f3f3;
+    -fx-border-width: 3px 0px 3px 3px;
+    -fx-border-style: solid;
+
+}
+
+.leftButton{
+    -fx-border-color: #f3f3f3;
+    -fx-border-width: 3px 3px 3px 0px;
+    -fx-border-style: solid;
+}
+
+
+.custom-progress {
+    -fx-pref-height: 20px;
+    -fx-background-color: #e0e0e0;
+    -fx-background-radius: 2px;
+
+}
+
+.custom-progress .track {
+    -fx-background-color: #e0e0e0;
+    -fx-background-radius: 2px;
+}
+
+.custom-progress .bar {
+    -fx-background-color: #1d914b;
+    -fx-background-radius: 2px;
+}

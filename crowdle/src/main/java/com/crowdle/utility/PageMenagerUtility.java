@@ -155,4 +155,30 @@ public class PageMenagerUtility {
             System.out.println(e.getMessage());
         }
     }
+
+
+    public static void goToGamemodePage(Stage primaryStage) {
+        try {
+            FXMLLoader loader = new FXMLLoader(PageMenagerUtility.class.getResource("/com/crowdle/GamemodePage.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+
+    public static void goToGamePage(Stage primaryStage) {try {
+        FXMLLoader loader = new FXMLLoader(PageMenagerUtility.class.getResource("/com/crowdle/GamePage.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    } catch (Exception e) {
+        System.out.println(e.getMessage());
+    }
+
+    }
 }

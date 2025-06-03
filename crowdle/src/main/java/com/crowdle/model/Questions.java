@@ -18,16 +18,16 @@ public class Questions {
     @Column(nullable = false, length = 255)
     private String content;
 
-    @Column(name = "\"answerA\"")
+    @Column(name = "\"answerA\"", length=100)
     private String answerA;
 
-    @Column(name = "\"answerB\"")
+    @Column(name = "\"answerB\"", length =100)
     private String answerB;
 
-    @Column(name = "\"answerC\"")
+    @Column(name = "\"answerC\"", length =100)
     private String answerC;
 
-    @Column(name = "\"answerD\"")
+    @Column(name = "\"answerD\"", length =100)
     private String answerD;
 
     @Column(name = "\"correctAnswer\"")
@@ -40,6 +40,10 @@ public class Questions {
     @ManyToOne
     @JoinColumn(name = "\"difficultyId\"")
     private GameDifficulty difficulty;
+
+
+    public Questions() {
+    }
 
     public Questions(String content, String answerA, String answerB, String answerC, String answerD, String correctAnswer, int topicId, int difficultyId) {
         this.content = content;

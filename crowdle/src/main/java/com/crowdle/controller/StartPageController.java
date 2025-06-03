@@ -1,5 +1,7 @@
 package com.crowdle.controller;
 
+import com.crowdle.dao.QuestionsDAO;
+import com.crowdle.model.Questions;
 import com.crowdle.model.Ranking;
 import com.crowdle.ApplicationInfo;
 import com.crowdle.utility.HibernateUtility;
@@ -13,9 +15,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import org.hibernate.Session;
+import org.hibernate.query.Page;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.List;
 
 public class StartPageController {
 
@@ -87,8 +91,8 @@ public class StartPageController {
 
     @FXML
     public void playButtonClick(ActionEvent actionEvent) {
-        //select * from topics order by random() limit 2 może się przydać do znajdywania pytań
-
+        Stage stage = (Stage)gameButton.getScene().getWindow();
+        PageMenagerUtility.goToGamemodePage(stage);
     }
 
     @FXML

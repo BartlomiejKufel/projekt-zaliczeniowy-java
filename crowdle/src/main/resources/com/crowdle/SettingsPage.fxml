@@ -3,6 +3,7 @@
 <?import java.lang.String?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -50,6 +51,9 @@
             <HBox.margin>
                <Insets right="10.0" />
             </HBox.margin>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
          </Button>
       </children>
      </HBox>
@@ -67,7 +71,10 @@
     </Pane>
     <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
         <children>
-            <Button fx:id="backButton" alignment="BASELINE_LEFT" layoutX="56.0" layoutY="455.0" mnemonicParsing="false" onAction="#backButtonClick" prefHeight="100.0" prefWidth="200.0" styleClass="backButton" text="POWRÓT" />
+            <Button fx:id="backButton" alignment="BASELINE_LEFT" layoutX="56.0" layoutY="455.0" mnemonicParsing="false" onAction="#backButtonClick" prefHeight="100.0" prefWidth="200.0" styleClass="backButton" text="POWRÓT">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor></Button>
         </children>
     </Pane>
    <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
@@ -77,30 +84,45 @@
                <Insets bottom="8.0" />
             </padding>
          </Label>
-         <TextField fx:id="usernameField" focusTraversable="false" layoutX="325.0" layoutY="160.0" prefWidth="280.0" promptText="Wprowadź nazwę użytkownika" styleClass="inputField" />
+         <TextField fx:id="usernameField" focusTraversable="false" layoutX="325.0" layoutY="160.0" prefWidth="280.0" promptText="Wprowadź nazwę użytkownika" styleClass="inputField">
+            <cursor>
+               <Cursor fx:constant="TEXT" />
+            </cursor></TextField>
          <Label fx:id="errorUserLabel" layoutX="616.0" layoutY="165.0" prefWidth="140.0" styleClass="errorLabel" text="errorUser" visible="false" wrapText="true" />
          <Label layoutX="325.0" layoutY="204.0" styleClass="fieldLabel" text="Email">
             <padding>
                <Insets bottom="8.0" />
             </padding>
          </Label>
-         <TextField fx:id="emailField" focusTraversable="false" layoutX="325.0" layoutY="232.0" prefWidth="280.0" promptText="Wprowadź email" styleClass="inputField" />
+         <TextField fx:id="emailField" focusTraversable="false" layoutX="325.0" layoutY="232.0" prefWidth="280.0" promptText="Wprowadź email" styleClass="inputField">
+            <cursor>
+               <Cursor fx:constant="TEXT" />
+            </cursor></TextField>
          <Label fx:id="errorMailLabel" layoutX="616.0" layoutY="214.0" prefHeight="60.0" prefWidth="280.0" styleClass="errorLabel" text="errorMail" visible="false" wrapText="true" />
          <Label layoutX="325.0" layoutY="272.0" styleClass="fieldLabel" text="Hasło">
             <padding>
                <Insets bottom="8.0" />
             </padding>
          </Label>
-         <PasswordField fx:id="passwordField" focusTraversable="false" layoutX="325.0" layoutY="300.0" prefWidth="280.0" promptText="Wprowadź hasło" styleClass="inputField" />
+         <PasswordField fx:id="passwordField" focusTraversable="false" layoutX="325.0" layoutY="300.0" prefWidth="280.0" promptText="Wprowadź hasło" styleClass="inputField">
+            <cursor>
+               <Cursor fx:constant="TEXT" />
+            </cursor></PasswordField>
          <Label fx:id="errorPasswordLabel" layoutX="616.0" layoutY="282.0" prefHeight="60.0" prefWidth="280.0" styleClass="errorLabel" text="errorPassword" visible="false" wrapText="true" />
          <Label layoutX="325.0" layoutY="344.0" styleClass="fieldLabel" text="Potwierdź hasło">
             <padding>
                <Insets bottom="8.0" />
             </padding>
          </Label>
-         <PasswordField fx:id="passwordConfirmField" focusTraversable="false" layoutX="325.0" layoutY="372.0" prefWidth="280.0" promptText="Potwierdź hasło" styleClass="inputField" />
+         <PasswordField fx:id="passwordConfirmField" focusTraversable="false" layoutX="325.0" layoutY="372.0" prefWidth="280.0" promptText="Potwierdź hasło" styleClass="inputField">
+            <cursor>
+               <Cursor fx:constant="TEXT" />
+            </cursor></PasswordField>
          <Label fx:id="errorConfirmLabel" layoutX="616.0" layoutY="377.0" prefWidth="140.0" styleClass="errorLabel" text="errorConfirm" visible="false" wrapText="true" />
-         <Button fx:id="saveButton" layoutX="376.0" layoutY="442.0" onAction="#saveButtonClick" prefHeight="34.0" prefWidth="179.0" styleClass="saveButton" text="Zapisz zmiany" />
+         <Button fx:id="saveButton" layoutX="376.0" layoutY="442.0" onAction="#saveButtonClick" prefHeight="34.0" prefWidth="179.0" styleClass="saveButton" text="Zapisz zmiany">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor></Button>
          <Label fx:id="saveLabel" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="291.0" layoutY="87.0" styleClass="saveLabel" text="Pomyślnie zaktualizowano dane" />
          <Label layoutX="322.0" layoutY="49.0" styleClass="headerLabel" text="Zmiana twoich danych" />
       </children>

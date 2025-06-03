@@ -3,6 +3,7 @@
 <?import java.lang.String?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -49,6 +50,9 @@
             <HBox.margin>
                <Insets right="10.0" />
             </HBox.margin>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
          </Button>
       </children>
      </HBox>
@@ -64,21 +68,36 @@
          <String fx:value="mainPane" />
       </styleClass>
       <children>
-         <Button fx:id="saveButton" layoutX="450.0" layoutY="470.0" mnemonicParsing="false" onAction="#saveButtonClick" styleClass="saveButton" text="Zapisz" />
+         <Button fx:id="saveButton" layoutX="450.0" layoutY="470.0" mnemonicParsing="false" onAction="#saveButtonClick" styleClass="saveButton" text="Zapisz">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor></Button>
          <Label layoutX="341.0" layoutY="30.0" styleClass="versionLabel" text="DODAJ PYTANIA Z PLIKU CSV" />
          <ListView fx:id="questionsListView" layoutX="92.0" layoutY="172.0" prefHeight="280.0" prefWidth="800.0" styleClass="questionsListView" />
-         <Button fx:id="choiceButton" layoutX="421.0" layoutY="121.0" mnemonicParsing="false" onAction="#choiceButtonClick" styleClass="selectButton" text="Wybierz plik" />
+         <Button fx:id="choiceButton" layoutX="421.0" layoutY="121.0" mnemonicParsing="false" onAction="#choiceButtonClick" styleClass="selectButton" text="Wybierz plik">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor></Button>
          <Label fx:id="saveLabel" alignment="BASELINE_CENTER" layoutX="283.0" layoutY="75.0" prefHeight="25.0" prefWidth="419.0" styleClass="saveLabel" text="Zapisano do bazy" textAlignment="CENTER" />
       </children>
    </Pane>
    <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
       <children>
-         <Button fx:id="userButton" alignment="BASELINE_LEFT" layoutX="16.0" layoutY="144.0" mnemonicParsing="false" onAction="#usersButtonClick" prefHeight="100.0" prefWidth="240.0" styleClass="usersButton" text="UŻYTKOWNICY" />
-         <Button fx:id="backButton" alignment="BASELINE_LEFT" layoutX="56.0" layoutY="455.0" mnemonicParsing="false" onAction="#backButtonClick" prefHeight="100.0" prefWidth="200.0" styleClass="backButton" text="POWRÓT" />
+         <Button fx:id="userButton" alignment="BASELINE_LEFT" layoutX="16.0" layoutY="144.0" mnemonicParsing="false" onAction="#usersButtonClick" prefHeight="100.0" prefWidth="240.0" styleClass="usersButton" text="UŻYTKOWNICY">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor></Button>
+         <Button fx:id="backButton" alignment="BASELINE_LEFT" layoutX="56.0" layoutY="455.0" mnemonicParsing="false" onAction="#backButtonClick" prefHeight="100.0" prefWidth="200.0" styleClass="backButton" text="POWRÓT">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor></Button>
          <Button fx:id="goToNotificationButton" alignment="BASELINE_LEFT" layoutX="16.0" layoutY="21.0" mnemonicParsing="false" onAction="#notificationAdminButtonClick" prefHeight="100.0" prefWidth="240.0" styleClass="notificationsButton" text="POWIADOMIENIA">
             <opaqueInsets>
                <Insets />
             </opaqueInsets>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
          </Button>
       </children>
    </Pane>

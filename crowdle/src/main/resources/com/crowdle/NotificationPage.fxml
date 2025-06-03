@@ -2,6 +2,7 @@
 
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.TreeView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -34,7 +35,10 @@
             <Insets bottom="20.0" top="20.0" />
         </GridPane.margin>
       <children>
-         <TreeView fx:id="notificationTreeView" layoutX="15.0" layoutY="13.0" prefHeight="360.0" prefWidth="290.0" showRoot="false" styleClass="notificationTreeView" />
+         <TreeView fx:id="notificationTreeView" layoutX="15.0" layoutY="13.0" prefHeight="360.0" prefWidth="290.0" showRoot="false" styleClass="notificationTreeView">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor></TreeView>
       </children>
     </Pane>
 
