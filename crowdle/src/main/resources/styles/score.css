@@ -1,0 +1,33 @@
+.headerLabel{
+    -fx-font-size: 24px;
+    -fx-text-fill: #f3f3f3;
+    -fx-font-weight: bold;
+
+}
+
+.resultLabel{
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+.closeButton{
+    -fx-background-color: #224a32;
+    -fx-text-fill: #f3f3f3;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+
+    -fx-border-color: #f3f3f3;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-style: solid;
+}
+
+.closeButton:hover {
+    -fx-text-fill: #a3ffb8;         
+    -fx-border-color: #a3ffb8;      
+}
+
+.pointsLabel{
+    -fx-font-size: 20px;
+    -fx-text-fill: #f3f3f3;
+    -fx-font-weight: bold;
+}

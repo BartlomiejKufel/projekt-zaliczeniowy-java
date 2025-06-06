@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane fx:id="root" prefHeight="400.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.crowdle.controller.ScorePageController">
+
+    <columnConstraints>
+        <ColumnConstraints percentWidth="100.0" />
+    </columnConstraints>
+
+    <rowConstraints>
+        <RowConstraints percentHeight="20.0" />
+        <RowConstraints percentHeight="80.0" />
+    </rowConstraints>
+   <Pane prefHeight="200.0" prefWidth="200.0" styleClass="banerPane">
+      <children>
+         <ImageView fx:id="iconImageView" fitHeight="72.0" fitWidth="91.0" layoutX="124.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../../../../../images/icon_crowdle.png" />
+            </image>
+         </ImageView>
+      </children>
+   </Pane>
+    <Pane prefHeight="200.0" prefWidth="200.0" styleClass="banerPane" GridPane.rowIndex="1">
+        <GridPane.margin>
+            <Insets bottom="20.0" top="20.0" />
+        </GridPane.margin>
+      <children>
+         <Button fx:id="closeButton" layoutX="107.0" layoutY="229.0" mnemonicParsing="false" onAction="#closeButtonClick" styleClass="closeButton" text="ZAMKNIJ" />
+         <Label fx:id="scoreLabel" alignment="BASELINE_CENTER" layoutX="113.0" layoutY="107.0" prefHeight="60.0" prefWidth="100.0" styleClass="inputField" text="Label" textAlignment="CENTER" />
+         <Label alignment="BASELINE_CENTER" layoutX="93.0" layoutY="8.0" styleClass="headerLabel" text="WYNIK GRY" textAlignment="CENTER" />
+         <Label fx:id="resultLabel" alignment="BASELINE_CENTER" layoutX="85.0" layoutY="60.0" prefHeight="25.0" prefWidth="150.0" styleClass="resultLabel" text="Label" />
+         <Label fx:id="pointsLabel" alignment="BASELINE_CENTER" layoutX="74.0" layoutY="170.0" prefHeight="30.0" prefWidth="180.0" styleClass="pointsLabel" text="-100 punktów" />
+      </children>
+
+    </Pane>
+
+
+    <stylesheets>
+        <URL value="@../../styles/main.css" />
+        <URL value="@../../styles/score.css" />
+    </stylesheets>
+
+
+</GridPane>

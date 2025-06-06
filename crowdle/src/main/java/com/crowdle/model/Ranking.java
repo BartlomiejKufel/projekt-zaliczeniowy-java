@@ -68,6 +68,15 @@ public class Ranking {
         this.rankId = rankId;
     }
 
-
+    @Override
+    public String toString() {
+        return "Ranking{" +
+                "playerId=" + playerId +
+                ", player=" + player +
+                ", points=" + points +
+                ", rankId=" + rankId +
+                ", rank=" + rank +
+                '}';
+    }
 }
 

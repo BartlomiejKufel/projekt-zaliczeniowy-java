@@ -97,6 +97,10 @@
     -fx-text-fill: #f3f3f3;
 }
 
+.centerText{
+    -fx-alignment: center;
+}
+
 .table-row-cell {
     -fx-background-color: transparent;
 }

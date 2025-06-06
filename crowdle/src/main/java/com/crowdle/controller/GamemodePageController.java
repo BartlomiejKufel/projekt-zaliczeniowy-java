@@ -54,17 +54,17 @@ public class GamemodePageController {
 
     public void easyButtonClick(ActionEvent actionEvent) {
         Stage stage = (Stage) backButton.getScene().getWindow();
-        PageMenagerUtility.goToGamePage(stage);
+        PageMenagerUtility.goToGamePage(stage,1);
     }
 
     public void advanceButtonClick(ActionEvent actionEvent) {
         Stage stage = (Stage) backButton.getScene().getWindow();
-        PageMenagerUtility.goToGamePage(stage);
+        PageMenagerUtility.goToGamePage(stage,2);
     }
 
     public void hardButtonClick(ActionEvent actionEvent) {
         Stage stage = (Stage) backButton.getScene().getWindow();
-        PageMenagerUtility.goToGamePage(stage);
+        PageMenagerUtility.goToGamePage(stage,3);
     }
 
     public void backButtonClick(ActionEvent actionEvent) {

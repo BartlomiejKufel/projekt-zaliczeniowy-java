@@ -67,9 +67,9 @@
       <children>
          <TableView fx:id="rankingTableView" layoutX="109.0" layoutY="65.0" prefHeight="450.0" prefWidth="766.0">
            <columns>
-             <TableColumn fx:id="usernameTableColumn" prefWidth="253.59996795654297" text="Nazwa" />
-             <TableColumn fx:id="pointsTableColumn" prefWidth="134.93341064453125" text="Punkty" />
-               <TableColumn fx:id="nameTableColumn" prefWidth="376.3999938964844" text="Ranga" />
+             <TableColumn fx:id="usernameTableColumn" prefWidth="310.0" resizable="false" text="Nazwa" />
+             <TableColumn fx:id="pointsTableColumn" prefWidth="115.0" resizable="false" text="Punkty" />
+               <TableColumn fx:id="nameTableColumn" prefWidth="340.0" resizable="false" text="Ranga" />
            </columns>
             <columnResizePolicy>
                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

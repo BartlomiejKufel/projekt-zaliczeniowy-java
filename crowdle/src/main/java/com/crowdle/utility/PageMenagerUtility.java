@@ -2,6 +2,8 @@ package com.crowdle.utility;
 
 import com.crowdle.ApplicationInfo;
 import com.crowdle.controller.AdminEditPageController;
+import com.crowdle.controller.GamePageController;
+import com.crowdle.controller.ScorePageController;
 import com.crowdle.model.Users;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -170,9 +172,13 @@ public class PageMenagerUtility {
     }
 
 
-    public static void goToGamePage(Stage primaryStage) {try {
+    public static void goToGamePage(Stage primaryStage, int selectedDifficulty) {try {
         FXMLLoader loader = new FXMLLoader(PageMenagerUtility.class.getResource("/com/crowdle/GamePage.fxml"));
         Parent root = loader.load();
+
+        GamePageController controller = loader.getController();
+        controller.setDifficulty(selectedDifficulty);
+
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -180,5 +186,30 @@ public class PageMenagerUtility {
         System.out.println(e.getMessage());
     }
 
+    }
+
+    public static boolean ScoreWindow(int goodAnswers, int howMuch, int points) {
+        try {
+            FXMLLoader loader = new FXMLLoader(PageMenagerUtility.class.getResource("/com/crowdle/ScorePage.fxml"));
+            Parent root = loader.load();
+
+            ScorePageController controller = loader.getController();
+            controller.setScore(goodAnswers,howMuch, points);
+
+            Scene scene = new Scene(root, 320, 400);
+            Image icon = new Image(new FileInputStream("images/logo_white.png"));
+            Stage stage = new Stage();
+            stage.getIcons().add(icon);
+            stage.setTitle(ApplicationInfo.Title+ ": Wynik");
+
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.showAndWait();
+            return true;
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
     }
 }

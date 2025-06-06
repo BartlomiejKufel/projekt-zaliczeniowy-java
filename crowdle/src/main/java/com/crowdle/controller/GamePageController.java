@@ -2,6 +2,8 @@ package com.crowdle.controller;
 
 import com.crowdle.ApplicationInfo;
 import com.crowdle.dao.QuestionsDAO;
+import com.crowdle.dao.RankDAO;
+import com.crowdle.dao.RankingDAO;
 import com.crowdle.model.Questions;
 import com.crowdle.model.Ranking;
 import com.crowdle.utility.HibernateUtility;
@@ -35,14 +37,13 @@ public class GamePageController {
     private int index=0;
     private List<Questions> questions;
     private int goodAnswers=0;
+    private int diffiluty =1;
+    final private int howMuch =20;
 
     @FXML
     public void initialize() throws FileNotFoundException {
         Image iconImg = new Image(new FileInputStream("images/icon_crowdle.png"));
         iconImageView.setImage(iconImg);
-
-        questions = QuestionsDAO.getRandomQuestions(20);
-        setQuestionText();
     }
 
     @FXML
@@ -56,9 +57,21 @@ public class GamePageController {
         }
         else{
             System.out.println("Zakończono grę\nIlość dobrych odpowiedzi: "+goodAnswers);
-            Stage stage = (Stage) clickedButton.getScene().getWindow();
-            PageMenagerUtility.goToStartPage(stage);
+            Ranking player =RankingDAO.getPlayer(ApplicationInfo.LoggedUserId);
 
+            double result = (double) goodAnswers/howMuch;
+            int points;
+            if(result < ApplicationInfo.VictoryThreshold && player.getPoints()==0) {points = 0;}
+            else if(result >= ApplicationInfo.VictoryThreshold){points = player.getRank().getWinPoints();}
+            else {points = player.getRank().getLossPoints();}
+
+            RankingDAO.UpdatePlayerRanking(player.getPlayerId(), player.getPoints()+points, RankDAO.RankCheckIn(player, (points > 0)));
+
+            if(PageMenagerUtility.ScoreWindow(goodAnswers, howMuch, points)){
+                Stage stage = (Stage) clickedButton.getScene().getWindow();
+                PageMenagerUtility.goToStartPage(stage);
+            }
+            System.out.println();
         }
 
     }
@@ -73,8 +86,9 @@ public class GamePageController {
 
         topicLabel.setText(question.getTopic().getName());
         questionLabel.setText(question.getContent()+"?");
-        gameProgressBar.setProgress(gameProgressBar.getProgress()+0.05);
-        progressLabel.setText((index+1)+"/20");
+        double progression = ((double) 1 /howMuch);
+        gameProgressBar.setProgress(gameProgressBar.getProgress()+progression);
+        progressLabel.setText((index+1)+"/"+howMuch);
     }
 
     private boolean checkAnswer(Button clickedButton){
@@ -82,4 +96,9 @@ public class GamePageController {
         return (answer==(clickedButton.getId().charAt(0)));
     }
 
+    public void setDifficulty(int selectedDifficulty) {
+        diffiluty = selectedDifficulty;
+        questions = QuestionsDAO.getRandomQuestions(howMuch, diffiluty);
+        setQuestionText();
+    }
 }

@@ -107,15 +107,15 @@ public class UsersDAO {
 
     public static boolean isUsernameInDB(String username){
         try(Session session = HibernateUtility.getSessionFactory().openSession()){
-        String query = "FROM Users WHERE username = :username";
-        List<Users> users = session.createQuery(query, Users.class)
-                .setParameter("username", username)
-                .getResultList();
+            String query = "FROM Users WHERE username = :username";
+            List<Users> users = session.createQuery(query, Users.class)
+                    .setParameter("username", username)
+                    .getResultList();
 
-        if (users.isEmpty()) {
-            return false;
-        }
-        return true;
+            if (users.isEmpty()) {
+                return false;
+            }
+            return true;
         }
     }
 

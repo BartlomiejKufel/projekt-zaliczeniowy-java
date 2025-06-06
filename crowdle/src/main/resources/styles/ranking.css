@@ -11,14 +11,14 @@
 }
 
 .table-view .column-header-background {
-    -fx-background-color: #bea40c;
+    -fx-background-color: #996324;
 }
 
 .table-view .column-header, .table-view .filler {
     -fx-size: 40;
     -fx-border-width: 0 0 1 0;
     -fx-border-color: transparent;
-    -fx-background-color: #bea40c;
+    -fx-background-color: #996324;
 }
 
 .table-view .label {
@@ -28,6 +28,7 @@
 
 .table-view .table-cell {
     -fx-text-fill: #f3f3f3;
+    -fx-alignment: center;
 }
 
 .table-row-cell {

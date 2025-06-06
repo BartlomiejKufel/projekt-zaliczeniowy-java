@@ -30,4 +30,18 @@ public class RankingDAO {
         }
     }
 
+    public static void UpdatePlayerRanking(int userId, int points, int rankId){
+        try(Session session = HibernateUtility.getSessionFactory().openSession()){
+            String query ="UPDATE Ranking SET  points = :points, rankId = :rank WHERE playerId = :id";
+            session.beginTransaction();
+            session.createQuery(query)
+                    .setParameter("points", points)
+                    .setParameter("rank", rankId)
+                    .setParameter("id", userId)
+                    .executeUpdate();
+
+            session.getTransaction().commit();
+        }
+    }
+
 }

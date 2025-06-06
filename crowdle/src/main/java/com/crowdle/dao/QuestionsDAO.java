@@ -15,20 +15,21 @@ public class QuestionsDAO {
         }
     }
 
-    public static List<Questions> getRandomQuestions(int howMuch){
+    public static List<Questions> getRandomQuestions(int howMuch, int difficultyId){
         try (Session session = HibernateUtility.getSessionFactory().openSession()) {
-            String query ="FROM Questions order by random() limit :number";
+            String query ="FROM Questions where difficulty.gameDifficultyId = :difficulty ORDER BY random()";
             List<Questions> questions = session.createQuery(query, Questions.class)
-                    .setParameter("number", howMuch)
+                    .setParameter("difficulty", difficultyId)
+//                    .setParameter("number", howMuch)
+                    .setMaxResults(howMuch)
                     .getResultList();
-
+//       WHERE "difficultyId" = :difficulty  LIMIT :number
             if (questions.isEmpty()) {
                 return null;
             }
 
             return questions;
         }
-
     }
 
 }

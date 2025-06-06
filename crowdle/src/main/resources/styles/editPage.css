@@ -25,7 +25,7 @@
     -fx-border-style: solid;
 }
 
-.refeshButton:hover {
+.refreshButton:hover {
     -fx-text-fill: #b3c5dc;         
     -fx-border-color: #b3c5dc;      
 }
