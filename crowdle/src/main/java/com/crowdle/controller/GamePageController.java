@@ -1,9 +1,8 @@
 package com.crowdle.controller;
 
 import com.crowdle.ApplicationInfo;
-import com.crowdle.dao.QuestionsDAO;
-import com.crowdle.dao.RankDAO;
-import com.crowdle.dao.RankingDAO;
+import com.crowdle.dao.*;
+import com.crowdle.model.GameHistory;
 import com.crowdle.model.Questions;
 import com.crowdle.model.Ranking;
 import com.crowdle.utility.HibernateUtility;
@@ -56,7 +55,6 @@ public class GamePageController {
             setQuestionText();
         }
         else{
-            System.out.println("Zakończono grę\nIlość dobrych odpowiedzi: "+goodAnswers);
             Ranking player =RankingDAO.getPlayer(ApplicationInfo.LoggedUserId);
 
             double result = (double) goodAnswers/howMuch;
@@ -66,6 +64,7 @@ public class GamePageController {
             else {points = player.getRank().getLossPoints();}
 
             RankingDAO.UpdatePlayerRanking(player.getPlayerId(), player.getPoints()+points, RankDAO.RankCheckIn(player, (points > 0)));
+            GameHistoryDAO.addGame(UsersDAO.getUser(player.getPlayerId()),(points > 0), points, result,diffiluty);
 
             if(PageMenagerUtility.ScoreWindow(goodAnswers, howMuch, points)){
                 Stage stage = (Stage) clickedButton.getScene().getWindow();

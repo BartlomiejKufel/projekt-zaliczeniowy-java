@@ -95,4 +95,26 @@
     -fx-border-color: #ffbb80;      
 }
 
+.gameInfoLabel{
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
 
+.noGames{
+    -fx-text-fill: #996324;
+}
+
+.separator{
+    -fx-font-size: 60px;
+    -fx-text-fill: #f3f3f3;
+}
+
+.wins{
+    -fx-font-size: 30px;
+    -fx-text-fill: #18984d;
+}
+
+.loses{
+    -fx-text-fill: #cf2121;
+    -fx-font-size: 30px;
+}

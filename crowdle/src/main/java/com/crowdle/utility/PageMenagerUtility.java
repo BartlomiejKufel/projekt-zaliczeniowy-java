@@ -172,20 +172,20 @@ public class PageMenagerUtility {
     }
 
 
-    public static void goToGamePage(Stage primaryStage, int selectedDifficulty) {try {
-        FXMLLoader loader = new FXMLLoader(PageMenagerUtility.class.getResource("/com/crowdle/GamePage.fxml"));
-        Parent root = loader.load();
+    public static void goToGamePage(Stage primaryStage, int selectedDifficulty) {
+        try {
+            FXMLLoader loader = new FXMLLoader(PageMenagerUtility.class.getResource("/com/crowdle/GamePage.fxml"));
+            Parent root = loader.load();
 
-        GamePageController controller = loader.getController();
-        controller.setDifficulty(selectedDifficulty);
+            GamePageController controller = loader.getController();
+            controller.setDifficulty(selectedDifficulty);
 
-        Scene scene = new Scene(root);
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    } catch (Exception e) {
-        System.out.println(e.getMessage());
-    }
-
+            Scene scene = new Scene(root);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public static boolean ScoreWindow(int goodAnswers, int howMuch, int points) {

@@ -1,6 +1,8 @@
 package com.crowdle.controller;
 
 import com.crowdle.ApplicationInfo;
+import com.crowdle.dao.GameHistoryDAO;
+import com.crowdle.dao.RankingDAO;
 import com.crowdle.model.Ranking;
 import com.crowdle.utility.HibernateUtility;
 import com.crowdle.utility.PageMenagerUtility;
@@ -29,21 +31,34 @@ public class GamemodePageController {
     @FXML public Button easyButton;
     @FXML public ImageView iconImageView;
     @FXML public Button notificationButton;
+    @FXML public Label noGameLabel;
+    @FXML public Label winsLabel;
+    @FXML public Label losesLabel;
+    @FXML public Label separatorLabel;
 
     @FXML
     public void initialize() throws FileNotFoundException {
         Image iconImg = new Image(new FileInputStream("images/icon_crowdle.png"));
         iconImageView.setImage(iconImg);
 
-        try(Session session = HibernateUtility.getSessionFactory().openSession()){
-            Ranking userInformation = session.find(Ranking.class, ApplicationInfo.LoggedUserId);
-            Image rankImg = new Image(new FileInputStream(userInformation.getRank().getRankImg()));
-            rankImage.setImage(rankImg);
-            rankLabel.setText(userInformation.getRank().getName());
-            rankPointsLabel.setText(userInformation.getPoints()+" CP");
-            usernameLabel.setText(userInformation.getPlayer().getUsername());
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+        Ranking userInformation = RankingDAO.getPlayer(ApplicationInfo.LoggedUserId);
+        Image rankImg = new Image(new FileInputStream(userInformation.getRank().getRankImg()));
+        rankImage.setImage(rankImg);
+        rankLabel.setText(userInformation.getRank().getName());
+        rankPointsLabel.setText(userInformation.getPoints()+" CP");
+        usernameLabel.setText(userInformation.getPlayer().getUsername());
+
+        if(GameHistoryDAO.gameCount(userInformation.getPlayerId()) == 0){noGameLabel.setVisible(true);}
+        else{
+            int wins = GameHistoryDAO.gameCount(userInformation.getPlayerId(), true);
+            int loses = GameHistoryDAO.gameCount(userInformation.getPlayerId(), false);
+
+            winsLabel.setText(String.valueOf(wins));
+            losesLabel.setText(String.valueOf(loses));
+            separatorLabel.setVisible(true);
+            winsLabel.setVisible(true);
+            losesLabel.setVisible(true);
+
         }
     }
 

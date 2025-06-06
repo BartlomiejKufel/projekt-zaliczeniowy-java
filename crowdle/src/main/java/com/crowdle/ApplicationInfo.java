@@ -1,7 +1,7 @@
 package com.crowdle;
 
 public class ApplicationInfo {
-    public static int LoggedUserId = 2;
+    public static int LoggedUserId = 0;
     public static int WindowHeight = 720;
     public static int WindowWidth = 1280;
     public static String Title = "Crowdle";

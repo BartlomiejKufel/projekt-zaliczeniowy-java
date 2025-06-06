@@ -19,7 +19,6 @@
         <mapping class="com.crowdle.model.GameDifficulty"/>
         <mapping class="com.crowdle.model.GameHistory"/>
         <mapping class="com.crowdle.model.Notifications"/>
-        <mapping class="com.crowdle.model.PlayerAnswers"/>
         <mapping class="com.crowdle.model.Questions"/>
         <mapping class="com.crowdle.model.Ranking"/>
         <mapping class="com.crowdle.model.Ranks"/>

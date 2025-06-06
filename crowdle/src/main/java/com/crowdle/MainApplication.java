@@ -17,10 +17,7 @@ public class MainApplication extends Application {
         try(Session session = HibernateUtility.getSessionFactory().openSession()){
             System.out.println("Połączenie z bazą danych");
         }
-
-
-//        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("LoginPage.fxml"));
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("StartPage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("LoginPage.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), ApplicationInfo.WindowWidth, ApplicationInfo.WindowHeight);
         Image icon = new Image(new FileInputStream("images/logo_white.png"));

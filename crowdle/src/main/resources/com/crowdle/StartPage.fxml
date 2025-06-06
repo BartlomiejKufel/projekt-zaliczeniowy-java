@@ -57,6 +57,30 @@
                <String fx:value="textColor" />
                <String fx:value="usernameLabel" />
             </styleClass></Label>
+         <Label fx:id="noGameLabel" layoutX="172.0" layoutY="432.0" text="Brak gier" visible="false">
+            <styleClass>
+               <String fx:value="gameInfoLabel" />
+               <String fx:value="noGames" />
+            </styleClass>
+         </Label>
+         <Label fx:id="winsLabel" alignment="BOTTOM_RIGHT" layoutX="94.0" layoutY="432.0" prefHeight="36.0" prefWidth="100.0" text="000" textAlignment="RIGHT" visible="false">
+            <styleClass>
+               <String fx:value="gameInfoLabel" />
+               <String fx:value="wins" />
+            </styleClass>
+         </Label>
+         <Label fx:id="losesLabel" alignment="BASELINE_LEFT" layoutX="219.0" layoutY="432.0" prefHeight="36.0" prefWidth="100.0" text="000" visible="false">
+            <styleClass>
+               <String fx:value="gameInfoLabel" />
+               <String fx:value="loses" />
+            </styleClass>
+         </Label>
+         <Label fx:id="separatorLabel" layoutX="190.0" layoutY="410.0" text="/" visible="false">
+            <styleClass>
+               <String fx:value="gameInfoLabel" />
+               <String fx:value="separator" />
+            </styleClass>
+         </Label>
       </children>
    </Pane>
    <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">

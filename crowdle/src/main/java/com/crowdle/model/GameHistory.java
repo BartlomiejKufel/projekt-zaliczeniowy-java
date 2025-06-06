@@ -18,20 +18,22 @@ public class GameHistory {
 
     @Column(name = "\"gameDate\"")
     private LocalDate gameDate;
-    private int scorepoint;
 
-    @Column(name = "\"questionScore\"")
-    private int questionScore;
+    @Column(name = "scorepoint")
+    private double scorepoint;
 
-    @Column(name = "\"playerAnswers\"")
-    private int playerAnswers;
+    @Column(name = "\"pointsGained\"")
+    private int pointsGained;
+
+    @Column(name="result")
+    private boolean result;
 
     @ManyToOne
-    @JoinColumn(name = "playerId")
+    @JoinColumn(name = "\"playerId\"")
     private Users player;
 
     @ManyToOne
-    @JoinColumn(name = "gameDifficultyId")
+    @JoinColumn(name = "\"gameDifficultyId\"")
     private GameDifficulty difficulty;
 
 
@@ -51,28 +53,28 @@ public class GameHistory {
         this.gameDate = gameDate;
     }
 
-    public int getScorepoint() {
+    public double getScorepoint() {
         return scorepoint;
     }
 
-    public void setScorepoint(int scorepoint) {
+    public void setScorepoint(double scorepoint) {
         this.scorepoint = scorepoint;
     }
 
-    public int getQuestionScore() {
-        return questionScore;
+    public int getPointsGained() {
+        return pointsGained;
     }
 
-    public void setQuestionScore(int questionScore) {
-        this.questionScore = questionScore;
+    public void setPointsGained(int pointsGained) {
+        this.pointsGained = pointsGained;
     }
 
-    public int getPlayerAnswers() {
-        return playerAnswers;
+    public boolean isResult() {
+        return result;
     }
 
-    public void setPlayerAnswers(int playerAnswers) {
-        this.playerAnswers = playerAnswers;
+    public void setResult(boolean result) {
+        this.result = result;
     }
 
     public Users getPlayer() {

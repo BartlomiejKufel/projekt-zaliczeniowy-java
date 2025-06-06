@@ -20,10 +20,8 @@ public class QuestionsDAO {
             String query ="FROM Questions where difficulty.gameDifficultyId = :difficulty ORDER BY random()";
             List<Questions> questions = session.createQuery(query, Questions.class)
                     .setParameter("difficulty", difficultyId)
-//                    .setParameter("number", howMuch)
                     .setMaxResults(howMuch)
                     .getResultList();
-//       WHERE "difficultyId" = :difficulty  LIMIT :number
             if (questions.isEmpty()) {
                 return null;
             }
