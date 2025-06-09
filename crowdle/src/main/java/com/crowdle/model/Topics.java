@@ -1,6 +1,15 @@
 package com.crowdle.model;
 import jakarta.persistence.*;
 
+/***********************************************************
+ Klasa: Topics
+ Info: Model tabeli z bazy danych o nazwie Topics
+ Pola:
+ — private — int — topicId
+ — private — String — name
+ Metody:
+ — Gettery i Settery dla powyższych pól
+ ************************************************************/
 
 @Entity
 @Table(name = "topics")

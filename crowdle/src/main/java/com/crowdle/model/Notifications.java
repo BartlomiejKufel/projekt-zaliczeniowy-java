@@ -1,10 +1,23 @@
 package com.crowdle.model;
 
 import jakarta.persistence.*;
-
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+
+
+/***********************************************************
+ Klasa: Notifications
+ Info: Model tabeli z bazy danych o nazwie Notifications
+ Pola:
+ — private — int — notificationId
+ — private — Users — user
+ — private — Timestamp — createdAt
+ — private — String — title
+ — private — String — message
+ Metody:
+ — Gettery i Settery dla powyższych pól
+ — Metoda toString()
+ ************************************************************/
 
 @Entity
 @Table(name = "notifications")
@@ -62,6 +75,7 @@ public class Notifications {
         this.createdAt = createdAt;
     }
 
+    //Metoda getMessage wzbogacona o tworzenie znaku nowej lini co 30 znaków, by ułatwić wyświetlanie w oknie powiadomień
     public String getMessage() {
         StringBuilder result = new StringBuilder();
         int lineLength = 30;

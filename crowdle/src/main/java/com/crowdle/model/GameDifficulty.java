@@ -2,6 +2,16 @@ package com.crowdle.model;
 
 import jakarta.persistence.*;
 
+/***********************************************************
+ Klasa: GameDifficulty
+ Info: Model tabeli z bazy danych o nazwie GameDifficulty
+ Pola:
+ — private — int — gameDifficultyId
+ — private — String — name
+ Metody:
+ — Gettery i Settery dla powyższych pól
+ ************************************************************/
+
 @Entity
 @Table(name = "gameDifficulty")
 public class GameDifficulty {

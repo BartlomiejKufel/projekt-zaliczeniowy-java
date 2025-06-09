@@ -1,0 +1,145 @@
+@startuml
+class com.crowdle.dao.RankDAO {
+}
+
+class com.crowdle.model.Ranking {
+}
+
+
+class com.crowdle.controller.AdminPageController {
+}
+
+
+class com.crowdle.dao.RankingDTO {
+}
+
+
+class com.crowdle.controller.RankingPageController {
+}
+
+
+class com.crowdle.controller.GamePageController {
+}
+
+
+class com.crowdle.controller.AdminNotificationsPageController {
+}
+
+
+class com.crowdle.model.GameDifficulty {
+}
+
+
+class com.crowdle.dao.GameHistoryDAO {
+
+}
+
+class com.crowdle.utility.HibernateUtility {
+}
+
+
+class com.crowdle.model.Users {
+}
+
+
+class com.crowdle.utility.PageMenagerUtility {
+}
+
+class com.crowdle.controller.AdminPageQuestionsController {
+}
+
+
+class com.crowdle.model.Questions {
+}
+
+
+class com.crowdle.controller.SignUpPageController {
+}
+
+
+class com.crowdle.controller.ScorePageController {
+}
+
+
+class com.crowdle.utility.ValidationUtility {
+}
+
+class com.crowdle.controller.GamemodePageController {
+}
+
+
+class com.crowdle.MainApplication {
+}
+
+class com.crowdle.model.Ranks {
+}
+
+
+class com.crowdle.utility.CsvUtility {
+}
+
+class com.crowdle.model.Notifications {
+
+}
+
+
+class com.crowdle.dao.UsersDAO {
+
+}
+
+class com.crowdle.dao.GameDifficultyDAO {
+}
+
+class com.crowdle.controller.AdminEditPageController {
+
+}
+
+
+class com.crowdle.model.GameHistory {
+
+}
+
+
+class com.crowdle.model.Topics {
+
+}
+
+
+class com.crowdle.ApplicationInfo {
+
+}
+
+class com.crowdle.controller.LoginPageController {
+
+}
+
+
+class com.crowdle.dao.NotificationsDAO {
+}
+
+class com.crowdle.controller.StartPageController {
+}
+
+
+class com.crowdle.controller.SettingsPageController {
+}
+
+
+class com.crowdle.dao.TopicsDAO {
+}
+
+class com.crowdle.dao.QuestionsDAO {
+}
+
+class com.crowdle.dao.RankingDAO {
+
+}
+
+class com.crowdle.controller.NotificationPageController {
+
+}
+
+
+
+'javafx.application.Application <|-- com.crowdle.MainApplication
+@enduml

@@ -13,9 +13,33 @@ import javafx.stage.Stage;
 
 import java.io.FileInputStream;
 
-
+/***********************************************************
+ Klasa: PageMenagerUtility
+ Info: Klasa odpowiada za przechowywanie metod, które pozwalają się poruszać pomiędzy oknami
+ Metody:
+ — public — static void — goToStartPage (Stage primaryStage)
+ — public — static void — goToLoginPage (Stage primaryStage)
+ — public — static void — goToSignUpPage (Stage primaryStage)
+ — public — static void — goToSettingsPage(Stage primaryStage)
+ — public — static void — goToRankingPage(Stage primaryStage)
+ — public — static void — goToAdminPage(Stage primaryStage)
+ — public — static boolean — goToAdminEditWindow(Users selectedUser)
+ — public — static void — goToAdminNotificationPage(Stage primaryStage)
+ — public — static void — goToAdminQuestionsPage(Stage primaryStage)
+ — public — static void — goToNotificationWindow()
+ — public — static void — goToGamemodePage(Stage primaryStage)
+ — public — static void — goToGamePage(Stage primaryStage, int selectedDifficulty)
+ — public — static boolean — ScoreWindow(int goodAnswers, int howMuch, int points)
+ ************************************************************/
 public class PageMenagerUtility {
 
+    /***********************************************************
+     Metoda: goToStartPage
+     Typ Zwracany: void
+     Info: przejście do strony startowej
+     Argumenty:
+     — Stage primaryStage
+     ************************************************************/
     public static void goToStartPage(Stage primaryStage) {
         try {
             FXMLLoader loader = new FXMLLoader(PageMenagerUtility.class.getResource("/com/crowdle/StartPage.fxml"));
@@ -28,6 +52,13 @@ public class PageMenagerUtility {
         }
     }
 
+    /***********************************************************
+     Metoda: goToLoginPage
+     Typ Zwracany: void
+     Info: przejście do strony logowania
+     Argumenty:
+     — Stage primaryStage
+     ************************************************************/
     public static void goToLoginPage(Stage primaryStage) {
         try {
             FXMLLoader loader = new FXMLLoader(PageMenagerUtility.class.getResource("/com/crowdle/LoginPage.fxml"));
@@ -40,6 +71,13 @@ public class PageMenagerUtility {
         }
     }
 
+    /***********************************************************
+     Metoda: goToSignUpPage
+     Typ Zwracany: void
+     Info: przejście do strony rejestracji nowych kont
+     Argumenty:
+     — Stage primaryStage
+     ************************************************************/
     public static void goToSignUpPage(Stage primaryStage) {
         try {
             FXMLLoader loader = new FXMLLoader(PageMenagerUtility.class.getResource("/com/crowdle/SignUpPage.fxml"));
@@ -52,6 +90,13 @@ public class PageMenagerUtility {
         }
     }
 
+    /***********************************************************
+     Metoda: goToSettingPage
+     Typ Zwracany: void
+     Info: przejście do strony z ustawieniami
+     Argumenty:
+     — Stage primaryStage
+     ************************************************************/
     public static void goToSettingsPage(Stage primaryStage) {
         try {
             FXMLLoader loader = new FXMLLoader(PageMenagerUtility.class.getResource("/com/crowdle/SettingsPage.fxml"));
@@ -64,6 +109,13 @@ public class PageMenagerUtility {
         }
     }
 
+    /***********************************************************
+     Metoda: goToRankingPage
+     Typ Zwracany: void
+     Info: przejście do strony z rankingiem wszystkich użytkowników
+     Argumenty:
+     — Stage primaryStage
+     ************************************************************/
     public static void goToRankingPage(Stage primaryStage) {
         try {
             FXMLLoader loader = new FXMLLoader(PageMenagerUtility.class.getResource("/com/crowdle/RankingPage.fxml"));
@@ -76,6 +128,13 @@ public class PageMenagerUtility {
         }
     }
 
+    /***********************************************************
+     Metoda: goToAdminPage
+     Typ Zwracany: void
+     Info: przejście do strony administratora
+     Argumenty:
+     — Stage primaryStage
+     ************************************************************/
     public static void goToAdminPage(Stage primaryStage) {
         try {
             FXMLLoader loader = new FXMLLoader(PageMenagerUtility.class.getResource("/com/crowdle/AdminPage.fxml"));
@@ -88,11 +147,20 @@ public class PageMenagerUtility {
         }
     }
 
+
+    /***********************************************************
+     Metoda: goToAdminEditWindow
+     Typ Zwracany: boolean
+     Info: przejście do okna edycji użytkownika, po zamknięciu tego okna metoda zwróci true
+     Argumenty:
+     — Users selectedUser — obiekt z danymi użytkownika wybrany na stronie administratora
+     ************************************************************/
     public static boolean goToAdminEditWindow(Users selectedUser) {
         try {
             FXMLLoader loader = new FXMLLoader(PageMenagerUtility.class.getResource("/com/crowdle/AdminEditPage.fxml"));
             Parent root = loader.load();
 
+            //Przekazanie obiektu do Okna edycji
             AdminEditPageController controller = loader.getController();
             controller.setSelectedUser(selectedUser);
 
@@ -113,6 +181,13 @@ public class PageMenagerUtility {
         }
     }
 
+    /***********************************************************
+     Metoda: goToAdminNotificationPage
+     Typ Zwracany: void
+     Info: przejście do strony wysyłania powiadomień
+     Argumenty:
+     — Stage primaryStage
+     ************************************************************/
     public static void goToAdminNotificationPage(Stage primaryStage) {
         try {
             FXMLLoader loader = new FXMLLoader(PageMenagerUtility.class.getResource("/com/crowdle/AdminNotificationPage.fxml"));
@@ -127,6 +202,13 @@ public class PageMenagerUtility {
 
 
 
+    /***********************************************************
+     Metoda: goToAdminQuestionPage
+     Typ Zwracany: void
+     Info: przejście do strony dodawania nowych plików
+     Argumenty:
+     — Stage primaryStage
+     ************************************************************/
     public static void goToAdminQuestionsPage(Stage primaryStage) {
         try {
             FXMLLoader loader = new FXMLLoader(PageMenagerUtility.class.getResource("/com/crowdle/AdminQuestionsPage.fxml"));
@@ -139,6 +221,13 @@ public class PageMenagerUtility {
         }
     }
 
+
+    /***********************************************************
+     Metoda: goToNotificationWindow
+     Typ Zwracany: void
+     Info: otworzenie okna z wiadomościami od administratora
+     Argumenty:
+     ************************************************************/
     public static void goToNotificationWindow() {
         try {
             FXMLLoader loader = new FXMLLoader(PageMenagerUtility.class.getResource("/com/crowdle/NotificationPage.fxml"));
@@ -159,6 +248,13 @@ public class PageMenagerUtility {
     }
 
 
+    /***********************************************************
+     Metoda: goToGamemodePage
+     Typ Zwracany: void
+     Info: przejście do strony wybierania trybu gry
+     Argumenty:
+     — Stage primaryStage
+     ************************************************************/
     public static void goToGamemodePage(Stage primaryStage) {
         try {
             FXMLLoader loader = new FXMLLoader(PageMenagerUtility.class.getResource("/com/crowdle/GamemodePage.fxml"));
@@ -172,6 +268,14 @@ public class PageMenagerUtility {
     }
 
 
+    /***********************************************************
+     Metoda: goToGamePage
+     Typ Zwracany: void
+     Info: przejście do strony gry
+     Argumenty:
+     — Stage primaryStage
+     — int selectedDifficulty — id trybu gry, który wybrał użytkownik
+     ************************************************************/
     public static void goToGamePage(Stage primaryStage, int selectedDifficulty) {
         try {
             FXMLLoader loader = new FXMLLoader(PageMenagerUtility.class.getResource("/com/crowdle/GamePage.fxml"));
@@ -188,11 +292,22 @@ public class PageMenagerUtility {
         }
     }
 
+
+    /***********************************************************
+     Metoda: ScoreWindow
+     Typ Zwracany: boolean
+     Info: otworzenie okna z wynikiem po zakończonej grze, metoda zwraca true po zamknięciu okna
+     Argumenty:
+     — int goodAnswer — ilość poprawnie udzielonych przez użytkownika odpowiedzi
+     — int howMuch — na ile pytań użytkownik musiał odpowiedzieć
+     — int points — ilość punktów, które użytkownik zyska/straci w zależności od wyniku gry
+     ************************************************************/
     public static boolean ScoreWindow(int goodAnswers, int howMuch, int points) {
         try {
             FXMLLoader loader = new FXMLLoader(PageMenagerUtility.class.getResource("/com/crowdle/ScorePage.fxml"));
             Parent root = loader.load();
 
+            //Przekazanie zmiennych do okna wyniku
             ScorePageController controller = loader.getController();
             controller.setScore(goodAnswers,howMuch, points);
 

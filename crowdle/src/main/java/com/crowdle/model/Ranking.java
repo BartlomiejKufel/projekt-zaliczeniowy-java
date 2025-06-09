@@ -2,7 +2,19 @@ package com.crowdle.model;
 import jakarta.persistence.*;
 
 
-
+/***********************************************************
+ Klasa: Ranking
+ Info: Model tabeli z bazy danych o nazwie Ranking
+ Pola:
+ — private — int — playerId
+ — private — Users — player
+ — private — int — points
+ — private — int — rankId
+ — private — Ranks — rank
+ Metody:
+ — Gettery i Settery dla powyższych pól
+ — Metoda toString()
+ ************************************************************/
 @Entity
 @Table(name = "ranking")
 public class Ranking {

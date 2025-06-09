@@ -5,6 +5,26 @@ import com.crowdle.dao.TopicsDAO;
 import jakarta.persistence.*;
 
 
+/***********************************************************
+ Klasa: Questions
+ Info: Model tabeli z bazy danych o nazwie Questions
+ Pola:
+ — private — int — questionId
+ — private — String — content
+ — private — String — answerA
+ — private — String — answerB
+ — private — String — answerC
+ — private — String — answerD
+ — private — String — correctAnswer
+ — private — Topics — topic
+ — private — GameDifficulty — difficulty
+ Metody:
+ — Gettery i Settery dla powyższych pól
+ — Metoda toString()
+ Konstruktory:
+ — ()
+ — (String content, String answerA, String answerB, String answerC, String answerD, String correctAnswer, int topicId, int difficultyId)
+ ************************************************************/
 
 @Entity
 @Table(name = "questions")

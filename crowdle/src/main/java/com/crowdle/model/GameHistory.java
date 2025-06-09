@@ -1,11 +1,24 @@
 package com.crowdle.model;
 
 import jakarta.persistence.*;
-
-
-import java.sql.Timestamp;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+
+
+
+/***********************************************************
+ Klasa: GameHistory
+ Info: Model tabeli z bazy danych o nazwie GameHistory
+ Pola:
+ — private — int — gameId
+ — private — LocalDate — gameDate
+ — private — double — scorepoint
+ — private — int — pointGained
+ — private — boolean — result
+ — private — Users — player
+ — private — GameDifficulty — difficulty
+ Metody:
+ — Gettery i Settery dla powyższych pól
+ ************************************************************/
 
 @Entity
 @Table(name = "gameHistory")

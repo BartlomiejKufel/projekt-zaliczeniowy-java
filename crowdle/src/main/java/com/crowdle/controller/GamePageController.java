@@ -62,6 +62,11 @@ public class GamePageController {
             if(result < ApplicationInfo.VictoryThreshold && player.getPoints()==0) {points = 0;}
             else if(result >= ApplicationInfo.VictoryThreshold){points = player.getRank().getWinPoints();}
             else {points = player.getRank().getLossPoints();}
+            AButton.setDisable(true);
+            BButton.setDisable(true);
+            CButton.setDisable(true);
+            DButton.setDisable(true);
+
 
             RankingDAO.UpdatePlayerRanking(player.getPlayerId(), player.getPoints()+points, RankDAO.RankCheckIn(player, (points > 0)));
             GameHistoryDAO.addGame(UsersDAO.getUser(player.getPlayerId()),(points > 0), points, result,diffiluty);
@@ -70,7 +75,6 @@ public class GamePageController {
                 Stage stage = (Stage) clickedButton.getScene().getWindow();
                 PageMenagerUtility.goToStartPage(stage);
             }
-            System.out.println();
         }
 
     }

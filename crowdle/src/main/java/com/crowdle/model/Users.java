@@ -1,15 +1,25 @@
 package com.crowdle.model;
 
 import jakarta.persistence.*;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
-
-
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
+
+
+/***********************************************************
+ Klasa: Users
+ Info: Model tabeli z bazy danych o nazwie Users
+ Pola:
+ — private — int — userId
+ — private — String — username
+ — private — String — password
+ — private — String — email
+ — private — TimeStamp — createdAt
+ — private — boolean — isAdmin
+ Metody:
+ — Gettery i Settery dla powyższych pól
+ — Metoda toString()
+ ************************************************************/
+
 
 @Entity
 @Table(name = "users")
@@ -32,11 +42,8 @@ public class Users {
     @Column(name = "\"createdAt\"")
     private Timestamp createdAt;
 
-
     @Column(nullable = false, name = "\"isAdmin\"")
     private boolean isAdmin;
-
-
 
     public Users() {
     }
@@ -86,6 +93,7 @@ public class Users {
         this.password = password;
     }
 
+    //metoda pomagająca wyświetlać dane w TableView na stronie admina
     public String getCreatedAt() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
         return createdAt.toLocalDateTime().format(formatter)+" r";
@@ -99,6 +107,7 @@ public class Users {
         return isAdmin;
     }
 
+    //metoda pomagająca wyświetlać dane w TableView na stronie admina
     public String getIsAdmin() {return isAdmin ? "TAK" : "NIE";}
 
 

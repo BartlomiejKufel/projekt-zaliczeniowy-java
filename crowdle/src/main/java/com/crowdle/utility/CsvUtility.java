@@ -4,15 +4,30 @@ import com.crowdle.dao.RankingDTO;
 import com.crowdle.model.Questions;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/***********************************************************
+ Klasa: CsvUtility
+ Info: Klasa posiadająca metody potrzebne do pracy na plikach csv
+ Metody:
+ — public — static void — exportRankingToCSV(List<RankingDTO> players, Stage primaryStage)
+ — public — static List<Questions> — loadQuestionsFromCSV(Stage primaryStage)
+
+ ************************************************************/
 public class CsvUtility {
 
 
-
+    /***********************************************************
+     Metoda: exportRankingToCSV
+     Typ Zwracany: void
+     Info: Metoda eksportuje dane z players do pliku z rozszerzeniem csv
+     Argumenty:
+     — List<RankingDTO> players — Lista obiektów RankingDTO
+     — Stage primaryStage
+     ************************************************************/
 
     public static void exportRankingToCSV(List<RankingDTO> players, Stage primaryStage) {
         FileChooser fileChooser = new FileChooser();
@@ -39,6 +54,13 @@ public class CsvUtility {
         }
     }
 
+    /***********************************************************
+     Metoda: loadQuestionsFrom CSV
+     Typ Zwracany: List<Questions>
+     Info: Metoda pobiera dane z pliku o rozszerzeniu csv wybranego przez użytkownika i zwraca je w formie Listy obiektów typu Questions
+     Argumenty:
+     — Stage primaryStage
+     ************************************************************/
 
     public static List<Questions> loadQuestionsFromCSV(Stage primaryStage) {
         FileChooser fileChooser = new FileChooser();
