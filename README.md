@@ -45,16 +45,15 @@ W grze dostępna będzie tabela rankingowa, która pozwoli graczom poczuć nutę
 <ul>
     <li>przeglądać swoje statystyki,</li>
     <li>odczytywać powiadomienia,</li>
-    <li>uruchamiać gry treningowe z różnym poziomem trudności pytań,</li>
+    <li>uruchamiać gry różnym poziomem trudności pytań,</li>
     <li>a także zmieniać nazwę użytkownika i hasło</li>
 </ul>    
 
 ### 🛠️ administrator, oprócz funkcji dostępnych dla zwykłych graczy, będzie mógł dodatkowo:
 <ul>
     <li>zmieniać nazwę użytkownika lub hasło dowolnego gracza,</li>
-    <li>konfigurować widełki rankingowe – czyli ustawiać, od ilu punktów zaczyna się dana ranga, ile punktów się w niej zdobywa i traci,</li>
     <li>wysyłać powiadomienia do graczy,</li>
     <li>dodawać nowe pytania do bazy danych,</li>
-    <li>eksportować listę 10 najlepszych graczy w całej grze</li>
+    <li>eksportować listę najlepszych graczy w całej grze</li>
 </ul>
 
