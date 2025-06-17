@@ -42,18 +42,36 @@ W przypadku niepowodzenia w quizie, gracz traci punkty i spada w rankingu.
 W grze dostępna będzie tabela rankingowa, która pozwoli graczom poczuć nutę rywalizacji.
 
 ### 🎧 dodatkowo gracz będzie mógł:
-<ul>
-    <li>przeglądać swoje statystyki,</li>
-    <li>odczytywać powiadomienia,</li>
-    <li>uruchamiać gry różnym poziomem trudności pytań,</li>
-    <li>a także zmieniać nazwę użytkownika i hasło</li>
-</ul>    
+* przeglądać swoje statystyki,
+* odczytywać powiadomienia,
+* uruchamiać gry różnym poziomem trudności pytań,
+* a także zmieniać nazwę użytkownika i hasło.
 
 ### 🛠️ administrator, oprócz funkcji dostępnych dla zwykłych graczy, będzie mógł dodatkowo:
-<ul>
-    <li>zmieniać nazwę użytkownika lub hasło dowolnego gracza,</li>
-    <li>wysyłać powiadomienia do graczy,</li>
-    <li>dodawać nowe pytania do bazy danych,</li>
-    <li>eksportować listę najlepszych graczy w całej grze</li>
-</ul>
+* zmieniać nazwę użytkownika lub hasło dowolnego gracza,
+* wysyłać powiadomienia do graczy,
+* dodawać nowe pytania do bazy danych,
+* eksportować listę najlepszych graczy w całej grze.
 
+<br>
+
+## 💻 Jak uruchomić aplikację?
+
+### Dodanie bazy danych
+1. Uruchom program <b>pgadmin4</b>.
+2. Stwórz nową bazę danych o nazwie <b>crowdle</b>.
+3. Następnie naciśnij prawym przyciskiem na myszce na bazę danych i z listy wybierz opcję <b>Restore</b>.
+4. W oknie <b>Restore</b> wybierz format <b>Custom or tar</b> i plik backup z folderu <b>DBstructure</b> z rozszerzeniem <b>sql</b>.
+5. Następnie naciśnij przycisk <b>Restore</b>.
+
+### Uruchomienie aplikacji
+1. Uruchom folder <b>crowdle</b> w programie <b>IntelliJ IDEA Community Edition 2024.3.3</b>.
+2. Sprawdź plik `./src/main/resources/hibernate.cfg.xml` w razie potrzeby zmień dane do bazy danych login, hasło lub url do bazy danych.
+3. Na końcu wejdź w plik `./src/main/java/com/crowdle/MainApplication.java` i uruchom program.
+
+### Aby korzystać z aplikacji
+Możesz zalogować się na stworzone już konto w bazie danych:
+* Administrator - login: <b>admin</b>, hasło: <b>admin</b>.  
+* Użytkownik - login: <b>user</b>, hasło: <b>user</b>.
+
+Lub stworzyć nowe konto na stronie rejestracji. Pamiętaj że konta stworzone w aplikacji zawsze będą kontami użytkowników. 
