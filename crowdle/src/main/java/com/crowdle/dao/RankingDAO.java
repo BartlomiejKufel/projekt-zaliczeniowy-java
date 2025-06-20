@@ -1,7 +1,6 @@
 package com.crowdle.dao;
 
 import com.crowdle.model.Ranking;
-import com.crowdle.model.Users;
 import com.crowdle.utility.HibernateUtility;
 import org.hibernate.Session;
 
@@ -30,7 +29,7 @@ public class RankingDAO {
         }
     }
 
-    public static void UpdatePlayerRanking(int userId, int points, int rankId){
+    public static void updatePlayerRanking(int userId, int points, int rankId){
         try(Session session = HibernateUtility.getSessionFactory().openSession()){
             String query ="UPDATE Ranking SET  points = :points, rankId = :rank WHERE playerId = :id";
             session.beginTransaction();

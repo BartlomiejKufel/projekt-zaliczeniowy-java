@@ -2,10 +2,8 @@ package com.crowdle.controller;
 
 import com.crowdle.ApplicationInfo;
 import com.crowdle.dao.*;
-import com.crowdle.model.GameHistory;
 import com.crowdle.model.Questions;
 import com.crowdle.model.Ranking;
-import com.crowdle.utility.HibernateUtility;
 import com.crowdle.utility.PageMenagerUtility;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,7 +14,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import org.hibernate.Session;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -45,6 +42,14 @@ public class GamePageController {
         iconImageView.setImage(iconImg);
     }
 
+
+    /***********************************************************
+     Metoda: hardButtonClick
+     Typ Zwracany: void
+     Info: Metoda, która sprawdza, na ile pytań odpowiedział użytkownik, jeśli odpowiedział na tyle ile jest wszystkich pytań to gra się kończy, wynik zapisuje się do bazy danych i uruchamia się okno końcowe gry.
+     Argumenty:
+     — ActionEvent actionEvent
+     ************************************************************/
     @FXML
     public void hardButtonClick(ActionEvent actionEvent) {
         Button clickedButton = (Button) actionEvent.getSource();
@@ -68,7 +73,7 @@ public class GamePageController {
             DButton.setDisable(true);
 
 
-            RankingDAO.UpdatePlayerRanking(player.getPlayerId(), player.getPoints()+points, RankDAO.RankCheckIn(player, (points > 0)));
+            RankingDAO.updatePlayerRanking(player.getPlayerId(), player.getPoints()+points, RankDAO.rankCheckIn(player, (points > 0)));
             GameHistoryDAO.addGame(UsersDAO.getUser(player.getPlayerId()),(points > 0), points, result,diffiluty);
 
             if(PageMenagerUtility.ScoreWindow(goodAnswers, howMuch, points)){

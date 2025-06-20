@@ -2,10 +2,8 @@ package com.crowdle.dao;
 
 import com.crowdle.model.Ranking;
 import com.crowdle.model.Ranks;
-import com.crowdle.model.Users;
 import com.crowdle.utility.HibernateUtility;
 import org.hibernate.Session;
-import org.hibernate.query.Page;
 
 import java.util.List;
 
@@ -25,8 +23,16 @@ public class RankDAO {
         }
     }
 
-    //true - win, false - lose
-    public static int RankCheckIn(Ranking playerRanking, boolean gameResult){
+
+    /***********************************************************
+     Metoda: rankCheckIn
+     Typ Zwracany: int
+     Info: Metoda, która sprawdza, w jakiej randze użytkownik powinien znaleźć się po grze, którą wygrał/przegrał.
+     Argumenty:
+     — Ranking playerRanking
+     — boolean gameResult — true-gra wygrana, false-gra przegrana
+     ************************************************************/
+    public static int rankCheckIn(Ranking playerRanking, boolean gameResult){
         int CheckedRankId =1;
         List<Ranks> ranks = getRanks();
         if(ranks == null || ranks.isEmpty())return -1;

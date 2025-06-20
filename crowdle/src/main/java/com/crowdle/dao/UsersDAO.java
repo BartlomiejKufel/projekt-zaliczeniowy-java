@@ -45,7 +45,15 @@ public class UsersDAO {
         }
     }
 
-
+    /***********************************************************
+     Metoda: addUser
+     Typ Zwracany: void
+     Info: Metoda, która najpierw dodaje nowego użytkownika, a następnie po jego identyfikatorze dodaje go do tabeli Ranking
+     Argumenty:
+     -String newUsername
+     -String newEmail
+     -String newPassword
+     ************************************************************/
     public static void addUser(String newUsername, String newEmail, String newPassword){
         try(Session session = HibernateUtility.getSessionFactory().openSession()){
             Users user = new Users();

@@ -15,7 +15,6 @@ import java.util.List;
  Metody:
  — public — static void — exportRankingToCSV(List<RankingDTO> players, Stage primaryStage)
  — public — static List<Questions> — loadQuestionsFromCSV(Stage primaryStage)
-
  ************************************************************/
 public class CsvUtility {
 
@@ -28,7 +27,6 @@ public class CsvUtility {
      — List<RankingDTO> players — Lista obiektów RankingDTO
      — Stage primaryStage
      ************************************************************/
-
     public static void exportRankingToCSV(List<RankingDTO> players, Stage primaryStage) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Zapisz ranking do CSV");
@@ -61,7 +59,6 @@ public class CsvUtility {
      Argumenty:
      — Stage primaryStage
      ************************************************************/
-
     public static List<Questions> loadQuestionsFromCSV(Stage primaryStage) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Wybierz plik CSV");
