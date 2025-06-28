@@ -1,5 +1,17 @@
 package com.crowdle.dao;
 
+/***********************************************************
+ Klasa: RankingDTO
+ Info: Model z 3 tabel z bazy danych o nazwie users, ranking i ranks
+ Pola:
+ — private — String — username
+ — private — String — name — nazwa rangi
+ — private — int — points — ilość punktów rankingowych
+
+ Metody:
+ — Gettery i Settery dla powyższych pól
+ — Metoda toString()
+ ************************************************************/
 public class RankingDTO {
     private String username;
     private String name;
